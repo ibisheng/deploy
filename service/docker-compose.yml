@@ -1,0 +1,103 @@
+version: "3.2"
+services:
+  zero:
+    image: dgraph/dgraph:v1.0.5
+    container_name: dgraphZero
+    privileged: true
+    volumes:
+      - ${basedir}/service/dgraph:/dgraph:rw
+    ports:
+      - 5080:5080
+      - 6080:6080
+    restart: on-failure
+    command: dgraph zero --my=zero:5080
+  server:
+    image: dgraph/dgraph:v1.0.5
+    container_name: dgraphServer
+    privileged: true
+    volumes:
+      - ${basedir}/service/dgraph:/dgraph:rw
+    ports:
+      - 8080:8080
+      - 9080:9080
+    restart: on-failure
+    command: dgraph server --whitelist  172.17.0.0:172.20.0.0 --my=server:7080 --lru_mb=2048 --zero=zero:5080
+  ratel:
+    image: dgraph/dgraph:v1.0.5
+    container_name: dgraphRatel
+    privileged: true
+    volumes:
+       - ${basedir}/service/dgraph:/dgraph:rw
+    ports:
+      - 8000:8000
+    restart: on-failure
+    command: dgraph-ratel
+ 
+  mongoddb:
+    image: mongo:3.6
+    container_name: mongoddb
+    privileged: true
+    volumes:
+       - ${basedir}/service/mongod/db/:/data/db:rw
+       - ${basedir}/service/mongod/config/:/data/configdb:rw
+       - ${basedir}/service/mongod/log/:/data/log:rw
+    ports:
+      - 27017:27017
+    restart: on-failure
+    command: --config /data/configdb/mongod.conf
+ 
+
+  redis:
+    image: redis:4.0
+    container_name: redis
+    privileged: true
+    volumes:
+       - ${basedir}/service/redis/db:/data:rw
+       - ${basedir}/service/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:rw
+    ports:
+      - 6379:6379
+    restart: on-failure:10
+    command: /usr/local/etc/redis/redis.conf
+
+
+  rabbit:
+    image: rabbitmq:3.6
+    container_name: rabbit
+    privileged: true
+    volumes:
+       - ${basedir}/service/rabbitmq/data/:/var/lib/rabbitmq/mnesia:rw
+       - ${basedir}/service/rabbitmq/config:/etc/rabbitmq:rw
+    ports:
+      - 4369:4369
+      - 5671-5672:5671-5672
+      - 15672:15672
+      - 25672:25672
+    hostname: mq
+    restart: on-failure:10
+
+  minio:
+    image: minio/minio
+    container_name: minio
+    privileged: true
+    volumes:
+      - ${basedir}/service/minio/data:/data:rw
+      - ${basedir}/service/minio/config:/root/.minio:rw
+    environment:
+      MINIO_ACCESS_KEY: 9QPAQ65R1SO1NDHNYESN
+      MINIO_SECRET_KEY: X9MquX/OTU35GLApKJ8tEMqBcTcXc4WSKigkroUI
+    ports:
+      - 9000:9000
+    restart: on-failure
+    command: server /data
+
+  search:
+    image: nas4.me:50000/search:cat
+    container_name: search
+    volumes:
+      - ${basedir}/service/elasticsearch/data:/workspace/data:rw
+      - ${basedir}/service/elasticsearch/logs:/workspace/logs:rw
+    ports:
+      - 9200:9200
+      - 9300:9300
+    user: elsearch
+    restart: on-failure:10

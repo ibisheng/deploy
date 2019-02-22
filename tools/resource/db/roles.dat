@@ -1,0 +1,8 @@
+{"_id":"8f6f5d4e","acls":{"file":14271,"version":11},"condition":"","name":"Member","desp":"项目普通成员","ns":"p","ct":"2018-10-08T04:03:48.204Z"}
+{"_id":"f5d78068","acls":{"file":14335,"project":61,"version":127},"condition":"","name":"Admin","desp":"项目管理员","ns":"p","ct":"2018-10-08T04:05:37.486Z"}
+{"_id":"22e58b7b","acls":{"file":2},"condition":"","name":"Guest","desp":"项目访客","ns":"p","ct":"2018-10-08T04:06:31.559Z"}
+{"_id":"d58be519","acls":{"file":16383,"trash":7,"version":127},"condition":"","name":"User","desp":"普通用户","ns":"uf","ct":"2018-10-08T04:08:50.912Z"}
+{"_id":"37d16dd2","acls":{"file":831},"condition":"","name":"Restricted User","desp":"受限用户","ns":"uf","ct":"2018-10-08T04:09:51.828Z"}
+{"_id":"0e2e81c6","acls":{"account":15},"condition":"","name":"Manager","desp":"经理","ns":"ac","ct":"2018-10-08T04:10:57.991Z"}
+{"_id":"06cd6d86","acls":{"admin":64},"condition":"","name":"Operator","desp":"","ns":"ad","ct":"2018-10-08T04:11:37.459Z"}
+{"_id":"362c4c05","acls":{"admin":143,"trash":7},"condition":"","name":"系统管理员","desp":"","ns":"ad","ct":"2018-10-08T04:12:28.193Z"}

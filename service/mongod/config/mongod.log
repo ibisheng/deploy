@@ -1,0 +1,120 @@
+2017-07-21T16:13:46.262+0000 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=6ac520b6a1b7
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten] db version v3.4.6
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten] git version: c55eb86ef46ee7aede3b1e2a5d184a7df4bfb5b5
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1t  3 May 2016
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten] modules: none
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten] build environment:
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten]     distmod: debian81
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-07-21T16:13:46.268+0000 I CONTROL  [initandlisten] options: { config: "/data/configdb/mongod.conf", net: { bindIp: "0.0.0.0", port: 27017 }, storage: { dbPath: "/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/data/configdb/mongod.log" } }
+2017-07-21T16:13:46.294+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-07-21T16:13:46.294+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1383M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-07-21T16:13:48.478+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:13:48.478+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-07-21T16:13:48.478+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-07-21T16:13:48.478+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:13:48.479+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:13:48.479+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2017-07-21T16:13:48.479+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-07-21T16:13:48.479+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:13:48.479+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2017-07-21T16:13:48.479+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-07-21T16:13:48.479+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:13:48.482+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2017-07-21T16:13:48.482+0000 I NETWORK  [thread1] waiting for connections on port 27017
+2017-07-21T16:13:58.187+0000 I NETWORK  [thread1] connection accepted from 192.168.2.66:56473 #1 (1 connection now open)
+2017-07-21T16:14:43.227+0000 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt), will terminate after current cmd ends
+2017-07-21T16:14:43.228+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2017-07-21T16:14:43.228+0000 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2017-07-21T16:14:43.228+0000 I NETWORK  [signalProcessingThread] closing listening socket: 8
+2017-07-21T16:14:43.228+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2017-07-21T16:14:43.228+0000 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2017-07-21T16:14:43.228+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2017-07-21T16:14:43.229+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2017-07-21T16:14:44.354+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2017-07-21T16:14:44.354+0000 I CONTROL  [signalProcessingThread] now exiting
+2017-07-21T16:14:44.354+0000 I CONTROL  [signalProcessingThread] shutting down with code:0
+2017-07-21T16:17:59.163+0000 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=387e60a3cf11
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten] db version v3.4.6
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten] git version: c55eb86ef46ee7aede3b1e2a5d184a7df4bfb5b5
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1t  3 May 2016
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten] modules: none
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten] build environment:
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten]     distmod: debian81
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-07-21T16:17:59.169+0000 I CONTROL  [initandlisten] options: { config: "/data/configdb/mongod.conf", net: { bindIp: "0.0.0.0", port: 27017 }, storage: { dbPath: "/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/data/configdb/mongod.log" } }
+2017-07-21T16:17:59.195+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-07-21T16:17:59.195+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1383M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-07-21T16:18:01.179+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:18:01.182+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2017-07-21T16:18:01.182+0000 I NETWORK  [thread1] waiting for connections on port 27017
+2017-07-21T16:18:26.869+0000 I NETWORK  [thread1] connection accepted from 172.17.0.1:53308 #1 (1 connection now open)
+2017-07-21T16:18:28.422+0000 I -        [conn1] end connection 172.17.0.1:53308 (1 connection now open)
+2017-07-21T16:18:58.247+0000 I NETWORK  [thread1] connection accepted from 192.168.2.66:56868 #2 (1 connection now open)
+2017-07-21T16:18:58.253+0000 I NETWORK  [thread1] connection accepted from 192.168.2.66:56869 #3 (2 connections now open)
+2017-07-21T16:20:01.240+0000 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt), will terminate after current cmd ends
+2017-07-21T16:20:01.240+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2017-07-21T16:20:01.240+0000 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2017-07-21T16:20:01.240+0000 I NETWORK  [signalProcessingThread] closing listening socket: 8
+2017-07-21T16:20:01.240+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2017-07-21T16:20:01.240+0000 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2017-07-21T16:20:01.240+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2017-07-21T16:20:01.242+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2017-07-21T16:20:01.985+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2017-07-21T16:20:01.985+0000 I CONTROL  [signalProcessingThread] now exiting
+2017-07-21T16:20:01.985+0000 I CONTROL  [signalProcessingThread] shutting down with code:0
+2017-07-21T16:24:25.191+0000 I CONTROL  [main] ***** SERVER RESTARTED *****
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=937c5cd78fb7
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten] db version v3.4.6
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten] git version: c55eb86ef46ee7aede3b1e2a5d184a7df4bfb5b5
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1t  3 May 2016
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten] modules: none
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten] build environment:
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten]     distmod: debian81
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2017-07-21T16:24:25.196+0000 I CONTROL  [initandlisten] options: { config: "/data/configdb/mongod.conf", net: { bindIp: "0.0.0.0", port: 27017 }, storage: { dbPath: "/data/db", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/data/configdb/mongod.log" } }
+2017-07-21T16:24:25.222+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2017-07-21T16:24:25.222+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1383M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:24:27.473+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2017-07-21T16:24:27.474+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-07-21T16:24:27.474+0000 I CONTROL  [initandlisten] 
+2017-07-21T16:24:27.477+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2017-07-21T16:24:27.477+0000 I NETWORK  [thread1] waiting for connections on port 27017
+2017-07-21T16:24:58.317+0000 I NETWORK  [thread1] connection accepted from 192.168.2.66:57334 #1 (1 connection now open)
+2017-07-21T16:25:57.257+0000 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt), will terminate after current cmd ends
+2017-07-21T16:25:57.257+0000 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2017-07-21T16:25:57.257+0000 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2017-07-21T16:25:57.257+0000 I NETWORK  [signalProcessingThread] closing listening socket: 8
+2017-07-21T16:25:57.257+0000 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2017-07-21T16:25:57.257+0000 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2017-07-21T16:25:57.257+0000 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2017-07-21T16:25:57.259+0000 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2017-07-21T16:25:58.169+0000 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2017-07-21T16:25:58.169+0000 I CONTROL  [signalProcessingThread] now exiting
+2017-07-21T16:25:58.169+0000 I CONTROL  [signalProcessingThread] shutting down with code:0
