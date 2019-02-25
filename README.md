@@ -4,6 +4,8 @@
 
 [毕升文档](https://ibisheng.cn)| 协同编辑 | 在线Office| onlyOffice
 
+![[https://shang.qq.com/wpa/qunwpa?idkey=d68edcbaad56b246ce836ea4c77177d02e79339c0074515b3db411b1d53f7593](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/%E6%AF%95%E5%8D%87%E6%96%87%E6%A1%A3%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/%E6%AF%95%E5%8D%87%E6%96%87%E6%A1%A3%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
+
 ## 硬件要求
 
 安装过程时在centos7系统下进行的，系统为4核8G虚拟云主机服务器。建议使用新安装的系统来安装毕升文档云平台。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
