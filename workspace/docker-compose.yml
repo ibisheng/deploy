@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   drive_full:
-    image: nas4.me:50000/drive_full:${tag}
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/drive_full:${tag}
     container_name: drive_full
     privileged: true
     volumes:
@@ -10,7 +10,7 @@ services:
     ports:
     - 3000:3000
   editor_app:
-    image: nas4.me:50000/editor_app:${tag}
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor_app:${tag}
     container_name: editor_app
     privileged: true
     volumes:
@@ -19,7 +19,7 @@ services:
     ports:
     - 5500:5500
   editor:
-    image: nas4.me:50000/editor:${tag}
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor:${tag}
     container_name: editor
     privileged: true
     volumes:
@@ -30,7 +30,7 @@ services:
     ports:
     - 18000:18000
   convert:
-    image: nas4.me:50000/convert:${tag}
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/convert:${tag}
     container_name: convert
     privileged: true
     volumes:
