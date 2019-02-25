@@ -1,6 +1,6 @@
 
 
-# ![logo](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/logo.png)毕升文档云平台安装步骤
+# ![logo](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/favicon.ico)毕升文档云平台安装步骤
 
 
 [毕升文档](https://ibisheng.cn)| 多人协同编辑 | 在线Office| onlyOffice
