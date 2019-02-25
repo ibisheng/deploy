@@ -91,7 +91,7 @@ services:
     command: server /data
 
   search:
-    image: nas4.me:50000/search:cat
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/search:free
     container_name: search
     volumes:
       - ${basedir}/service/elasticsearch/data:/workspace/data:rw

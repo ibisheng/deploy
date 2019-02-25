@@ -15,7 +15,7 @@ rm -rf $1/*
 docker rm minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongoddb  drive_full editor_app convert editor -f
 
 export basedir=$1
-export tag=cat
+export tag=free
 
 mkdir $1/{service,workspace}
 
