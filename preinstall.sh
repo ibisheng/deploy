@@ -9,7 +9,7 @@ yum-config-manager \
 yum install docker-ce docker-ce-cli containerd.io    
 
 systemctl start docker
-
+systemctl enable docker
 
 curl -L \
    https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` \
