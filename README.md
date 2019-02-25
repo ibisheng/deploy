@@ -68,7 +68,7 @@
 
 5. 如何使用
 
-   1. 以上安装完成之后，输入地址 http://192.168.2.108:3000即可进入到毕升文档主页面。其中IP为第三步安装过程中指定的IP。 
+   1. 以上安装完成之后，输入地址 http://192.168.2.108:3000  即可进入到毕升文档主页面。其中IP为第三步安装过程中指定的IP。 
 
    ![image-20190225153147382](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/ibisheng.png)
 
