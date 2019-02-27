@@ -58,6 +58,7 @@ cd tools
 ./init -config=$1/workspace/config/config.yml -type=7 -resource=resource/
 
 
+cd -
 
 cd $1/workspace
 mkdir temp
