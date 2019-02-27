@@ -16,6 +16,7 @@ docker rm minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongoddb
 
 export basedir=$1
 export tag=free
+sh pullImage.sh $tag
 
 echo $1 > .config
 echo $2 >> .config
