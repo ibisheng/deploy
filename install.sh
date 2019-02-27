@@ -18,9 +18,7 @@ export basedir=$1
 export tag=free
 sh pullImage.sh $tag
 
-echo $1 > .config
-echo $2 >> .config
-echo "free" >> .config
+echo "$1 $2 free" > .config
 
 mkdir $1/{service,workspace}
 
