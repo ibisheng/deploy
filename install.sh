@@ -19,6 +19,7 @@ export tag=free
 sh pullImage.sh $tag
 
 echo "$1 $2 free" > .config
+exit
 
 mkdir $1/{service,workspace}
 
