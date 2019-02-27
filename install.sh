@@ -3,11 +3,11 @@ if [ ! -n "$1" ] ;then
     echo "必须指定一个安装目录"
     exit
 fi
- 
+
 if [ ! -n "$1" ] ;then
     echo "必须指定本机IP"
     exit
-fi 
+fi
 
 echo "copy resource data"
 
@@ -16,6 +16,10 @@ docker rm minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongoddb
 
 export basedir=$1
 export tag=free
+
+echo $1 > .config
+echo $2 >> .config
+echo "free" >> .config
 
 mkdir $1/{service,workspace}
 
