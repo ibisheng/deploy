@@ -13,6 +13,29 @@
 
 安装过程时在centos7系统下进行的，系统为4核8G虚拟云主机服务器。建议使用新安装的系统来安装毕升文档云平台。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
 
+## 系统要求
+
+关闭系统防火墙
+
+```shell
+systemctl stop firewalld.service #停止firewall
+systemctl disable firewalld.service #禁止firewall开机启动
+```
+
+关闭 selinux
+
+```
+vi /etc/selinux/config
+```
+
+将SELINUX=enforcing改为SELINUX=disabled 
+
+重启系统
+
+```shell
+reboot
+```
+
 ## 步骤
 
 1. 从[github](https://github.com/ibisheng/deploy.git)上clone相关的部署脚本到服务器上
