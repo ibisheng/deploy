@@ -55,8 +55,8 @@ sleep 60
 
 cd tools
 
+./init -config=$1/workspace/config/config.yml -type=7 -resource=resource/
 
-./init -config=$1/workspace/config/config.yml -type=15 -resource=resource/
 
 
 cd $1/workspace
@@ -64,3 +64,11 @@ mkdir temp
 mkdir logs
 
 docker-compose up -d
+
+sleep 20
+
+cd -
+
+cd tools
+
+./init -config=$1/workspace/config/config.yml -type=8 -resource=resource/
