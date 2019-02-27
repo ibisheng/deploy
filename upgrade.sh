@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+git pull
 var=$(cat .config)
 arr=()
 for element in $var
