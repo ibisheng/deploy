@@ -104,7 +104,7 @@ reboot
 
 ## 配置
 
-完成前面5步操作之后，你的毕升文档系统需要进行简单的[license配置](https://ibisheng.cn)之后就可以正常使用。
+完成前面5步操作之后，需要申请免费激活系统即可进行正常使用。参考链接：[免费激活](https://ibisheng.cn/apps/blog/posts/license.html)
 
 ## 集成毕升文档文件服务，实现Office在线预览和编辑
 
