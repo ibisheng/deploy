@@ -3,11 +3,11 @@ if [ ! -n "$1" ] ;then
     echo "必须指定一个安装目录"
     exit
 fi
- 
+
 if [ ! -n "$1" ] ;then
     echo "必须指定本机IP"
     exit
-fi 
+fi
 
 echo "copy resource data"
 
@@ -16,6 +16,9 @@ docker rm minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongoddb
 
 export basedir=$1
 export tag=free
+sh pullImage.sh $tag
+
+echo "$1 $2 free" > .config
 
 mkdir $1/{service,workspace}
 
@@ -50,12 +53,21 @@ sleep 60
 
 cd tools
 
+./init -config=$1/workspace/config/config.yml -type=7 -resource=resource/
 
-./init -config=$1/workspace/config/config.yml -type=15 -resource=resource/
 
+cd -
 
 cd $1/workspace
 mkdir temp
 mkdir logs
 
 docker-compose up -d
+
+sleep 20
+
+cd -
+
+cd tools
+
+./init -config=$1/workspace/config/config.yml -type=8 -resource=resource/
