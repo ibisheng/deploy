@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-yun -y update
+yum -y update
 yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
