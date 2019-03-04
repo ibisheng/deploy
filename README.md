@@ -66,7 +66,27 @@ reboot
 
    ![image-20190225144902164](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-version.png)
 
-3. 一键安装毕升文档云平台
+3. docker镜像加速。由于国内网络原因，docker镜像拉取可能会失败，因此建议用户使用docker镜像加速：
+
+   使用 vi  修改 /etc/docker/daemon.json 文件并添加上 registry-mirrors
+
+   ```json
+   {
+     "registry-mirrors": ["https://registry.docker-cn.com"]
+   }	
+   ```
+
+   重启docker
+
+   ```shell
+   systemctl restart docker
+   ```
+
+   重启后再次检查docker以及docker-compose 状态，以确保docker是正常运行。
+
+   ![image-20190225144902164](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-version.png)
+
+4. 一键安装毕升文档云平台
 
    在完成以上步骤之后，可以通过install.sh脚本来安装毕升文档
 
@@ -78,7 +98,7 @@ reboot
 
    该安装命令需要两个参数：一个是参数是安装目录，该目录是毕升文档的工作目录，所以的数据都会保存在该目录，需要保证该目录所有在的存储设备上有较大的空间。在上面的脚步是我们是使用 /data目录作为安装目录；另外一个参数是本机的IP，安装完成之后可以通过这个IP来访问毕升文档。需要注意的是，**该IP不能为127.0.0.1，该IP地址需要在docker容器里面也能够连接上**
 
-4. 测试
+5. 测试
 
    待上一步骤脚本执行完成之后，先检查所有的docker容易是否全部正常启动。
 
@@ -96,7 +116,7 @@ reboot
 
    如果以上容器状态都正常则表明安装已经完成。
 
-5. 如何使用
+6. 如何使用
 
    1. 以上安装完成之后，输入地址 http://192.168.2.108:3000  即可进入到毕升文档主页面。其中IP为第三步安装过程中指定的IP。 
 
