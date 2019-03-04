@@ -45,6 +45,13 @@ reboot
    cd deploy
    ```
 
+   或者你也可以从国内代码托管网站[码云](https://gitee.com/ibisheng) 上clone毕升文档部署脚本到服务器上
+
+   ```shell
+   git clone https://gitee.com/ibisheng/deploy
+   cd deploy
+   ```
+
 2. 安装docker以及docker-compose
 
    毕升文档云平台所有的服务均是基于docker-compose安装的，在进行下一步安装之前，请确保你的服务器上已经安装了docker已经docker-compose。你可以使用我们准备的脚本安装,也可以自行参考资料进行安装。r如果你是使用脚步安装可以直接执行 preinstall.sh脚本
