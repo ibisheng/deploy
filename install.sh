@@ -64,7 +64,7 @@ mkdir logs
 
 docker-compose up -d
 
-sleep 20
+sleep 30
 
 cd -
 

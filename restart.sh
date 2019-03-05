@@ -13,5 +13,16 @@ tag=${arr[2]}
 export basedir=$data
 export tag=$tag
 
+
+cd $data/service
+
+docker-compose restart dgraphZero dgraphServer dgraphRatel mongoddb redis rabbit minio search
+
+
+sleep 20
+
 cd $data/workspace
 docker-compose restart drive_full editor_app editor convert
+
+
+
