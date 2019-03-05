@@ -135,6 +135,8 @@ reboot
 
 完成前面5步操作之后，需要申请免费激活系统即可进行正常使用。参考链接：[免费激活](https://ibisheng.cn/apps/blog/posts/license.html)
 
+如果你需要使用nginx做反向代理，请参考[毕升文档nginx配置](https://ibisheng.cn/apps/blog/posts/nginx.html)
+
 ## 集成毕升文档文件服务，实现Office在线预览和编辑
 
 上面的步骤完成之后，你就可以免费使用毕升文档包含drive功能以及在线文件服务功能。另外如果你的文件是存储在邮件附件，OA, ERP，以及其他的各种在线系统，你也可以使用已经部署完成的毕升文档云平台的在线文件服务来来实现Office在线预览和编辑。你所需要做的是实现相关API就可以免费使用毕升在线文件服务。相关API请参考[**毕升文档文件在线服务集成API**](https://ibisheng.cn)
