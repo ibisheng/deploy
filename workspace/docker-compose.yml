@@ -8,7 +8,7 @@ services:
     - ${basedir}/workspace:/workspace
     restart: on-failure:10
     ports:
-    - 3000:3000
+#    - 3000:3000
     networks:
     - bisheng
     hostname: drive_full
@@ -20,7 +20,7 @@ services:
     - ${basedir}/workspace:/workspace
     restart: on-failure:10
     ports:
-    - 5500:5500
+#    - 5500:5500
     networks:
     - bisheng
     hostname: editor_app
@@ -34,7 +34,7 @@ services:
     environment:
       ADDR: editor
     ports:
-    - 18000:18000
+#    - 18000:18000
     networks:
     - bisheng
     hostname: editor
@@ -48,7 +48,7 @@ services:
     environment:
       ADDR: convert
     ports:
-    - 5000:5000
+#    - 5000:5000
     networks:
     - bisheng
     hostname: convert
