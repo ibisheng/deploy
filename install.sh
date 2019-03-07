@@ -4,9 +4,13 @@ if [ ! -n "$1" ] ;then
     exit
 fi
 
-if [ ! -n "$1" ] ;then
+if [ ! -n "$2" ] ;then
     echo "必须指定本机IP"
     exit
+fi
+
+if [ ! -x "$1" ] ;then
+     mkdir "$1"
 fi
 
 echo "copy resource data"
