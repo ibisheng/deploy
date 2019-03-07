@@ -1,6 +1,6 @@
 version: "3.2"
 services:
-  zero:
+  dgraphZero:
     image: dgraph/dgraph:v1.0.5
     container_name: dgraphZero
     privileged: true
@@ -13,7 +13,7 @@ services:
     command: dgraph zero --my=zero:5080
     networks:
     - bisheng
-  server:
+  dgraphServer:
     image: dgraph/dgraph:v1.0.5
     container_name: dgraphServer
     privileged: true
@@ -26,7 +26,7 @@ services:
     command: dgraph server --whitelist  172.17.0.0:172.20.0.0 --my=server:7080 --lru_mb=2048 --zero=zero:5080
     networks:
     - bisheng
-  ratel:
+  dgraphRatel:
     image: dgraph/dgraph:v1.0.5
     container_name: dgraphRatel
     privileged: true
@@ -38,7 +38,7 @@ services:
     command: dgraph-ratel
     networks:
     - bisheng
- 
+
   mongoddb:
     image: mongo:3.6
     container_name: mongoddb
