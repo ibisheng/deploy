@@ -14,7 +14,7 @@ minio:
   staticbucket: static
   #dnslookup: true
   #region: oss-cn-beijing
-statichost:   http://IP:9000 # minio的资源访问地址，根据自己情况修改
+statichost:  /s3 # minio的资源访问地址，根据自己情况修改
 dgrpah:
   addr: dgraphServer:9080  # dgraph的主机名或IP,根据自己的情况修改,端口一般是默认值
 mongodb:

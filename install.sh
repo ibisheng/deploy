@@ -40,6 +40,9 @@ touch  mongod/log/mongod.log
 mkdir -p rabbitmq/{data}
 mkdir -p minio/{config,data}
 mkdir -p elasticsearch/{data,logs}
+mkdir -p nginx/{temp,keys}
+touch  nginx/temp/error.log
+touch  nginx/temp/access.log
 
 chmod 777 elasticsearch/ -R
 
