@@ -44,7 +44,7 @@ services:
 
   mongod:
     image: mongo:3.6
-    container_name: mongoddb
+    container_name: mongod
     privileged: true
     volumes:
        - ${basedir}/service/mongod/db/:/data/db:rw
