@@ -5,9 +5,9 @@ services:
     container_name: nginx
     privileged: true
     volumes:
-    - ${basedir}/service/nginx/config:/config:r
+    - ${basedir}/service/nginx/config:/config:rw
     - ${basedir}/service/nginx/temp:/temp:rw
-    - ${basedir}/service/keys/keys:/keys:r
+    - ${basedir}/service/keys/keys:/keys:rw
     ports:
     - 80:80
     - 443:443
