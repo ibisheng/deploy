@@ -20,7 +20,7 @@ services:
     privileged: true
     volumes:
       - ${basedir}/service/dgraph:/dgraph:rw
-    ports:
+#    ports:
 #      - 5080:5080
 #      - 6080:6080
     restart: on-failure
@@ -34,7 +34,7 @@ services:
     privileged: true
     volumes:
       - ${basedir}/service/dgraph:/dgraph:rw
-    ports:
+#    ports:
 #      - 8080:8080
 #      - 9080:9080
     restart: on-failure
@@ -48,7 +48,7 @@ services:
     privileged: true
     volumes:
        - ${basedir}/service/dgraph:/dgraph:rw
-    ports:
+#    ports:
 #      - 8000:8000
     restart: on-failure
     command: dgraph-ratel
@@ -64,7 +64,7 @@ services:
        - ${basedir}/service/mongod/db/:/data/db:rw
        - ${basedir}/service/mongod/config/:/data/configdb:rw
        - ${basedir}/service/mongod/log/:/data/log:rw
-    ports:
+#    ports:
 #      - 27017:27017
     restart: on-failure
     command: --config /data/configdb/mongod.conf
@@ -80,7 +80,7 @@ services:
     volumes:
        - ${basedir}/service/redis/db:/data:rw
        - ${basedir}/service/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:rw
-    ports:
+#    ports:
 #      - 6379:6379
     restart: on-failure:10
     command: /usr/local/etc/redis/redis.conf
@@ -96,7 +96,7 @@ services:
     volumes:
        - ${basedir}/service/rabbitmq/data/:/var/lib/rabbitmq/mnesia:rw
        - ${basedir}/service/rabbitmq/config:/etc/rabbitmq:rw
-    ports:
+#    ports:
 #      - 4369:4369
 #      - 5671-5672:5671-5672
 #      - 15672:15672
@@ -116,7 +116,7 @@ services:
     environment:
       MINIO_ACCESS_KEY: 9QPAQ65R1SO1NDHNYESN
       MINIO_SECRET_KEY: X9MquX/OTU35GLApKJ8tEMqBcTcXc4WSKigkroUI
-    ports:
+#    ports:
 #      - 9000:9000
     restart: on-failure
     command: server /data
@@ -130,7 +130,7 @@ services:
     volumes:
       - ${basedir}/service/elasticsearch/data:/workspace/data:rw
       - ${basedir}/service/elasticsearch/logs:/workspace/logs:rw
-    ports:
+#    ports:
 #      - 9200:9200
 #      - 9300:9300
     user: elsearch
