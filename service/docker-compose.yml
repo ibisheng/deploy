@@ -12,6 +12,8 @@ services:
     - 80:80
     - 443:443
     restart: on-failure
+    networks:
+    - bisheng
   dgraphZero:
     image: dgraph/dgraph:v1.0.5
     container_name: dgraphZero
