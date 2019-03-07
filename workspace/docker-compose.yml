@@ -9,6 +9,8 @@ services:
     restart: on-failure:10
     ports:
     - 3000:3000
+    networks:
+    - bisheng
   editor_app:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor_app:${tag}
     container_name: editor_app
@@ -18,6 +20,8 @@ services:
     restart: on-failure:10
     ports:
     - 5500:5500
+    networks:
+    - bisheng
   editor:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor:${tag}
     container_name: editor
@@ -29,6 +33,8 @@ services:
       ADDR: editor
     ports:
     - 18000:18000
+    networks:
+    - bisheng
   convert:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/convert:${tag}
     container_name: convert
@@ -40,3 +46,8 @@ services:
       ADDR: convert
     ports:
     - 5000:5000
+    networks:
+    - bisheng
+networks:
+  bisheng:
+    external: true

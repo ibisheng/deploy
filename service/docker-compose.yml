@@ -11,6 +11,8 @@ services:
       - 6080:6080
     restart: on-failure
     command: dgraph zero --my=zero:5080
+    networks:
+    - bisheng
   server:
     image: dgraph/dgraph:v1.0.5
     container_name: dgraphServer
@@ -22,6 +24,8 @@ services:
       - 9080:9080
     restart: on-failure
     command: dgraph server --whitelist  172.17.0.0:172.20.0.0 --my=server:7080 --lru_mb=2048 --zero=zero:5080
+    networks:
+    - bisheng
   ratel:
     image: dgraph/dgraph:v1.0.5
     container_name: dgraphRatel
@@ -32,6 +36,8 @@ services:
       - 8000:8000
     restart: on-failure
     command: dgraph-ratel
+    networks:
+    - bisheng
  
   mongoddb:
     image: mongo:3.6
@@ -45,6 +51,8 @@ services:
       - 27017:27017
     restart: on-failure
     command: --config /data/configdb/mongod.conf
+    networks:
+    - bisheng
  
 
   redis:
@@ -58,6 +66,8 @@ services:
       - 6379:6379
     restart: on-failure:10
     command: /usr/local/etc/redis/redis.conf
+    networks:
+    - bisheng
 
 
   rabbit:
@@ -74,6 +84,8 @@ services:
       - 25672:25672
     hostname: mq
     restart: on-failure:10
+    networks:
+    - bisheng
 
   minio:
     image: minio/minio
@@ -89,6 +101,8 @@ services:
       - 9000:9000
     restart: on-failure
     command: server /data
+    networks:
+    - bisheng
 
   search:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/search:free
@@ -101,3 +115,8 @@ services:
       - 9300:9300
     user: elsearch
     restart: on-failure:10
+    networks:
+    - bisheng
+networks:
+  bisheng:
+    external: true
