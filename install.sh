@@ -16,8 +16,8 @@ fi
 echo "copy resource data"
 
 rm -rf $1/*
-docker rm minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongoddb  drive_full editor_app convert editor -f  > /dev/null
-docker network create bisheng > /dev/null
+docker rm minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongoddb  drive_full editor_app convert editor -f  1 > /dev/null 2>&1
+docker network create bisheng 1 > /dev/null 2>&1
 
 export basedir=$1
 export tag=free
