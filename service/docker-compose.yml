@@ -146,7 +146,7 @@ services:
         aliases:
         - search
   tootls:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/tootls:${tag}
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/tools:${tag}
     container_name: tootls
     privileged: true
     volumes:
