@@ -4,4 +4,4 @@ docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor_app:$1
 docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor:$1
 docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/convert:$1
 docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/search:free
-docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/tools:${tag}
+docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/toodockerls:${tag}
