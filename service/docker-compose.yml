@@ -147,7 +147,7 @@ services:
         - search
   tootls:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/tootls:${tag}
-    container_name: drive_full
+    container_name: tootls
     privileged: true
     volumes:
     - ${basedir}:/workspace
