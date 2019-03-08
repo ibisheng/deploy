@@ -9,7 +9,7 @@ if [ ! -n "$2" ] ;then
 fi
 docker rm tools -f 1 > /dev/null 2>&1
 
-docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/tools:${tag}
+docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/tools:$2
 
 docker run --name tools --privileged  \
     -v /data:/workspace \
