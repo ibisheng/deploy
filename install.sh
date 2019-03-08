@@ -5,7 +5,7 @@ if [ ! -n "$1" ] ;then
 fi
 
 if [ ! -n "$2" ] ;then
-    echo "必须指定本机IP"
+    echo "必须指定访问毕升文档的域名"
     exit
 fi
 
@@ -43,6 +43,8 @@ mkdir -p elasticsearch/{data,logs}
 mkdir -p nginx/{temp,keys}
 touch  nginx/temp/error.log
 touch  nginx/temp/access.log
+mkdir  nginx/config/conf.d
+sed -e 's/HOST/'$2'/g' ../workspace/config/bisheng.conf >  nginx/config/conf.d/bisheng.conf
 
 chmod 777 elasticsearch/ -R
 
@@ -55,7 +57,7 @@ cd -
 
 #cp config.sample.yml config.yml
 
-sed -e 's/IP/'$2'/g' workspace/config/config.sample.yml > $1/workspace/config/config.yml
+sed -e 's/HOST/'$2'/g' workspace/config/config.sample.yml > $1/workspace/config/config.yml
 
 sleep 60
 
