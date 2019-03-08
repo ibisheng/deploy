@@ -26,3 +26,6 @@ docker-compose restart drive_full editor_app editor convert
 
 
 
+cd $data/service
+
+docker-compose restart nginx
