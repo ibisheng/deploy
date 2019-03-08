@@ -145,17 +145,6 @@ services:
       bisheng:
         aliases:
         - search
-  tools:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/tools:${tag}
-    container_name: tools
-    privileged: true
-    volumes:
-      - ${basedir}:/workspace
-    restart: on-failure:10
-    networks:
-      bisheng:
-        aliases:
-        - tools
 networks:
   bisheng:
     external: true
