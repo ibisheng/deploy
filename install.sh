@@ -61,7 +61,7 @@ sleep 60
 
 cd tools
 
-./init -config=$1/workspace/config/config.yml -type=7 -resource=resource/
+sh init.sh 7 $2
 
 
 cd -
@@ -78,4 +78,4 @@ cd -
 
 cd tools
 
-./init -config=$1/workspace/config/config.yml -type=8 -resource=resource/
+sh init.sh 8 $2
