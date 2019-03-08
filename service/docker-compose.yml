@@ -24,7 +24,7 @@ services:
 #      - 5080:5080
 #      - 6080:6080
     restart: on-failure
-    command: dgraph zero --my=zero:5080
+    command: dgraph zero --my=dgraphZero:5080
     networks:
       bisheng:
         aliases:
