@@ -25,11 +25,11 @@ sh pullImage.sh $tag
 
 echo "$1 $2 free" > .config
 
-mkdir $1/{service,workspace}
+mkdir $1/{service,workspace,resource}
 
 cp -r service/* $1/service
 cp -r workspace/* $1/workspace
-
+cp -r resource/* $1/resource
 
 cd $1/service
 
