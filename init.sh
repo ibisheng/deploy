@@ -7,7 +7,7 @@ if [ ! -n "$2" ] ;then
     echo "必须指定容器标签"
     exit
 fi
-docker rm tools -f
+docker rm tools -f 1 > /dev/null 2>&1
 
 docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/tools:${tag}
 
