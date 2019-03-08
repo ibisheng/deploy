@@ -26,8 +26,9 @@ services:
     restart: on-failure
     command: dgraph zero --my=zero:5080
     networks:
-    - bisheng
-    hostname: dgraphZero
+      bisheng:
+        aliases:
+        - dgraphZero
   dgraphServer:
     image: dgraph/dgraph:v1.0.5
     container_name: dgraphServer
@@ -40,8 +41,9 @@ services:
     restart: on-failure
     command: dgraph server --whitelist  172.17.0.0:172.20.0.0 --my=dgraphServer:7080 --lru_mb=2048 --zero=dgraphZero:5080
     networks:
-    - bisheng
-    hostname: dgraphServer
+      bisheng:
+        aliases:
+        - dgraphServer
   dgraphRatel:
     image: dgraph/dgraph:v1.0.5
     container_name: dgraphRatel
@@ -53,9 +55,9 @@ services:
     restart: on-failure
     command: dgraph-ratel
     networks:
-    - bisheng
-    hostname: dgraphRatel
-
+      bisheng:
+        aliases:
+        - dgraphRatel
   mongod:
     image: mongo:3.6
     container_name: mongod
@@ -69,8 +71,9 @@ services:
     restart: on-failure
     command: --config /data/configdb/mongod.conf
     networks:
-    - bisheng
-    hostname: mongod
+      bisheng:
+        aliases:
+        - mongod
 
 
   redis:
@@ -85,8 +88,9 @@ services:
     restart: on-failure:10
     command: /usr/local/etc/redis/redis.conf
     networks:
-    - bisheng
-    hostname: redis
+      bisheng:
+        aliases:
+        - redis
 
 
   rabbit:
@@ -103,8 +107,9 @@ services:
 #      - 25672:25672
     restart: on-failure:10
     networks:
-    - bisheng
-    hostname: rabbit
+      bisheng:
+        aliases:
+        - rabbit
 
   minio:
     image: minio/minio
@@ -121,8 +126,9 @@ services:
     restart: on-failure
     command: server /data
     networks:
-    - bisheng
-    hostname: minio
+      bisheng:
+        aliases:
+        - minio
 
   search:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/search:free
@@ -136,8 +142,9 @@ services:
     user: elsearch
     restart: on-failure:10
     networks:
-    - bisheng
-    hostname: search
+      bisheng:
+        aliases:
+        - search
 networks:
   bisheng:
     external: true
