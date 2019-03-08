@@ -150,7 +150,7 @@ services:
     container_name: tootls
     privileged: true
     volumes:
-    - ${basedir}:/workspace
+      - ${basedir}:/workspace
     restart: on-failure:10
     networks:
       bisheng:
