@@ -15,6 +15,13 @@ export basedir=$data
 export tag=$tag
 
 sh pullImage.sh $tag
+
+cd $data/service
+
+docker-compose up -d
+
+sleep 30
+
 cd $data/workspace
 
 docker-compose up -d
