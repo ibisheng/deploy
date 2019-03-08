@@ -78,3 +78,5 @@ cd -
 
 
 sh init.sh 8 free
+
+sh restart.sh
