@@ -60,7 +60,7 @@ sed -e 's/IP/'$2'/g' workspace/config/config.sample.yml > $1/workspace/config/co
 sleep 60
 
 
-sh init.sh 7 $2
+sh init.sh 7 free
 
 
 
