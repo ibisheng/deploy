@@ -25,3 +25,5 @@ sleep 30
 cd $data/workspace
 
 docker-compose up -d
+
+sh restart.sh
