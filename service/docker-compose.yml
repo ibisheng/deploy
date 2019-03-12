@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   dgraphZero:
-    image: dgraph/dgraph:v1.0.5
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
     container_name: dgraphZero
     privileged: true
     volumes:
@@ -16,7 +16,7 @@ services:
         aliases:
         - dgraphZero
   dgraphServer:
-    image: dgraph/dgraph:v1.0.5
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
     container_name: dgraphServer
     privileged: true
     volumes:
@@ -31,7 +31,7 @@ services:
         aliases:
         - dgraphServer
   dgraphRatel:
-    image: dgraph/dgraph:v1.0.5
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
     container_name: dgraphRatel
     privileged: true
     volumes:
@@ -45,7 +45,7 @@ services:
         aliases:
         - dgraphRatel
   mongod:
-    image: mongo:3.6
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/mongo:3.6
     container_name: mongod
     privileged: true
     volumes:
@@ -63,7 +63,7 @@ services:
 
 
   redis:
-    image: redis:4.0
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/redis:4.0
     container_name: redis
     privileged: true
     volumes:
@@ -80,7 +80,7 @@ services:
 
 
   rabbit:
-    image: rabbitmq:3.6
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/rabbitmq:3.6
     container_name: rabbit
     privileged: true
     volumes:
@@ -98,7 +98,7 @@ services:
         - rabbit
 
   minio:
-    image: minio/minio
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:latest
     container_name: minio
     privileged: true
     volumes:
