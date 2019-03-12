@@ -17,20 +17,20 @@ export tag=$tag
 sh pullImage.sh $tag
 
 cd $data/service
-
+echo "reinstall service"
 docker-compose up -d
 cd -
 sleep 30
 
 cd $data/workspace
-
+echo "reinstall apps"
 docker-compose up -d
 
 cd -
 
 
 cd $data/ningx
-
+echo "reinstall nginx"
 docker-compose up -d
 
 cd -
