@@ -15,40 +15,23 @@
 
 ## 系统要求
 
-关闭系统防火墙
+毕升文档安装完成自带nginx，并且配置好全部全部的路径。**请确保你的系统中的80，443端口没有被占用**
 
-```shell
-systemctl stop firewalld.service #停止firewall
-systemctl disable firewalld.service #禁止firewall开机启动
-```
 
-关闭 selinux
-
-```
-vi /etc/selinux/config
-```
-
-将SELINUX=enforcing改为SELINUX=disabled 
-
-重启系统
-
-```shell
-reboot
-```
 
 ## 步骤
 
 1. 从[github](https://github.com/ibisheng/deploy.git)上clone相关的部署脚本到服务器上
 
    ```shell
-   git clone https://github.com/ibisheng/deploy.git
+   git clone https://github.com/ibisheng/onlyoffice-deploy.git
    cd deploy
    ```
 
    或者你也可以从国内代码托管网站[码云](https://gitee.com/ibisheng) 上clone毕升文档部署脚本到服务器上
 
-   ```shell
-   git clone https://gitee.com/ibisheng/deploy
+   ```
+   git clone https://gitee.com/ibisheng/deploy.git
    cd deploy
    ```
 
@@ -63,7 +46,8 @@ reboot
    如果自行安装可以参考docker安装资料：**[docker 安装](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)**，而docker-compose安装则可以执行如下命令进行：
 
    ```shell
-   curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+   curl -L https://get.daocloud.io/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` \
+      -o /usr/local/bin/docker-compose
    chmod +x /usr/local/bin/docker-compose
    systemctl start docker
    systemctl enable docker
@@ -73,70 +57,46 @@ reboot
 
    ![image-20190225144902164](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-version.png)
 
-3. docker镜像加速。由于国内网络原因，docker镜像拉取可能会失败，因此建议用户使用docker镜像加速：
-
-   使用 vi  修改 /etc/docker/daemon.json 文件并添加上 registry-mirrors
-
-   ```json
-   {
-     "registry-mirrors": ["https://registry.docker-cn.com"]
-   }	
-   ```
-
-   重启docker
-
-   ```shell
-   systemctl restart docker
-   ```
-
-   重启后再次检查docker以及docker-compose 状态，以确保docker是正常运行。
-
-   ![image-20190225144902164](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-version.png)
-
-4. 一键安装毕升文档云平台
+3. 一键安装毕升文档云平台
 
    在完成以上步骤之后，可以通过install.sh脚本来安装毕升文档
 
    ```shell
-   sh install.sh /data 192.168.2.108  
+   sh install.sh /data 192.168.2.108
    ```
 
-   **注意：** 安装目录的结尾**不要 斜杠 “/”**，否则安装目录最好拼接会出错。**即上面脚本 "/data"不要写成“/data/”**  并且***/data目录必须存在***
+   注意：** 安装目录的结尾**不要 斜杠 “/”**，否则安装目录最好拼接会出错。**即上面脚本 "/data"不要写成“/data/”** 
 
-   该安装命令需要两个参数：一个是参数是安装目录，该目录是毕升文档的工作目录，所以的数据都会保存在该目录，需要保证该目录所有在的存储设备上有较大的空间。在上面的脚步是我们是使用 /data目录作为安装目录；另外一个参数是本机的IP，安装完成之后可以通过这个IP来访问毕升文档。需要注意的是，**该IP不能为127.0.0.1，该IP地址需要在docker容器里面也能够连接上**
+   该安装命令需要两个参数：一个是参数是安装目录，该目录是毕升文档的工作目录，所以的数据都会保存在该目录，需要保证该目录所有在的存储设备上有较大的空间。在上面的脚步是我们是使用 /data目录作为安装目录；另外一个参数是IP，安装完成之后可以通过这个http://ip 来访问毕升文档；也可以是域名，即安装完成之后也可以通过域名来访问毕升文档
 
-5. 测试
+4. 测试
 
    待上一步骤脚本执行完成之后，先检查所有的docker容易是否全部正常启动。
 
    ```shell
-   cd service
-   docker-compose ps
-   cd ../workspace/
-   export basedir=/data
-   docker-compose ps
+   docker ps -a
    ```
 
-   注意：进入 service目录之后 docker-compose ps 查看的是毕升文档依赖服务的docker容器；进入到workspace 目录查看的是毕升文档所有的服务的容器。export basedir=/data指定的环境变量值为毕升文档安装目录。
+   ![image-20190312214341594](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190312214341594.png)
 
-   ![image-20190225150645223](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-status.png)
+   **其中tools这个容器正常状态是Exit的。**
 
-   如果以上容器状态都正常则表明安装已经完成。
+5. 如何使用
 
-6. 如何使用
-
-   1. 以上安装完成之后，输入地址 http://192.168.2.108:3000  即可进入到毕升文档主页面。其中IP为第三步安装过程中指定的IP。 
+   1. 以上安装完成之后，输入地址 http://192.168.2.108 或者http://hostname  即可进入到毕升文档主页面。其中IP为第三步安装过程中指定的IP。
 
    ![image-20190225153147382](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/ibisheng.png)
 
-   
+
 
 ## 配置
 
 完成前面5步操作之后，需要申请免费激活系统即可进行正常使用。参考链接：[免费激活](https://ibisheng.cn/apps/blog/posts/license.html)
 
-如果你需要使用nginx做反向代理，请参考[毕升文档nginx配置](https://ibisheng.cn/apps/blog/posts/nginx.html)
+毕升文档安装默认是自带ngix配置的，其中nginx的配置文件在安装目录下。如果安装安装目录是 /data 具体路径则是： /data/service/nginx/config/conf.d/bisheng.conf 。
+
+如果你需要配置nginx 的https，则可以将https证书放在/data/service/nginx/keys目录下，该目录在docker中的路径是/keys，**配置时路径应该填写docker的路径**
 
 ## 集成毕升文档文件服务，实现Office在线预览和编辑
 
-上面的步骤完成之后，你就可以免费使用毕升文档包含drive功能以及在线文件服务功能。另外如果你的文件是存储在邮件附件，OA, ERP，以及其他的各种在线系统，你也可以使用已经部署完成的毕升文档云平台的在线文件服务来来实现Office在线预览和编辑。你所需要做的是实现相关API就可以免费使用毕升在线文件服务。相关API请参考[**毕升文档文件在线服务集成API**](https://ibisheng.cn)
+上面的步骤完成之后，你就可以免费使用毕升文档包含drive功能以及在线文件服务功能。另外如果你的文件是存储在邮件附件，ERP，以及其他的各种在线系统，你也可以使用已经部署完成的毕升文档云平台的在线文件服务来来实现Office在线预览和编辑。你所需要做的是实现相关API就可以免费使用毕升在线文件服务。相关API请参考[**毕升文档文件在线服务集成API**](
