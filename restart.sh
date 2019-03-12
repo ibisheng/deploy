@@ -24,8 +24,7 @@ sleep 20
 cd $data/workspace
 docker-compose restart drive_full editor_app editor convert
 
-
-
-cd $data/service
+sleep 10
 
 docker-compose restart nginx
+
