@@ -19,11 +19,13 @@ sh pullImage.sh $tag
 cd $data/service
 
 docker-compose up -d
-
+cd -
 sleep 30
 
 cd $data/workspace
 
 docker-compose up -d
+
+cd -
 
 sh restart.sh
