@@ -28,4 +28,11 @@ docker-compose up -d
 
 cd -
 
+
+cd $data/ningx
+
+docker-compose up -d
+
+cd -
+
 sh restart.sh

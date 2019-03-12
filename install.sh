@@ -25,11 +25,13 @@ sh pullImage.sh $tag
 
 echo "$1 $2 free" > .config
 
-mkdir $1/{service,workspace,resource}
+mkdir $1/{service,workspace,resource,ningx}
 
 cp -r service/* $1/service
 cp -r workspace/* $1/workspace
 cp -r resource/* $1/resource
+cp -r ningx/* $1/ningx
+
 
 cd $1/service
 
@@ -79,4 +81,8 @@ cd -
 
 sh init.sh 8 free
 
-sh restart.sh
+
+
+cd $1/ningx
+docker-compose up -d
+

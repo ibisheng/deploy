@@ -1,0 +1,19 @@
+version: "3.2"
+services:
+  nginx:
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/nginx:free
+    container_name: nginx
+    privileged: true
+    volumes:
+    - ${basedir}/service/nginx/config:/config:rw
+    - ${basedir}/service/nginx/temp:/temp:rw
+    - ${basedir}/service/keys/keys:/keys:rw
+    ports:
+    - 80:80
+    - 443:443
+    restart: on-failure
+    networks:
+    - bisheng
+networks:
+  bisheng:
+    external: true
