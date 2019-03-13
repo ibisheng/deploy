@@ -138,7 +138,7 @@
 
 4. 执行过程出现错误： Network bushing  declared as external…..  如下图
 
-   ![93D17738F207B6557723390F85D1CAA1](/Users/dan/Library/Containers/com.tencent.qq/Data/Library/Caches/Images/93D17738F207B6557723390F85D1CAA1.png)
+   ![93D17738F207B6557723390F85D1CAA1](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/93D17738F207B6557723390F85D1CAA1.png)
 
    这是因为有些服务器上脚本运行 docker create network bisheng 会出错。修复这个问题的方法是手动执行一下这个命令
 
