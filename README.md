@@ -113,7 +113,7 @@
    在安装脚本（**步骤1中所下载下载脚**)本所在的目录，有一个脚本 restart.sh。执行该脚本即可重启毕升文档
 
    ```shell
-   sh start.sh
+   sh restart.sh
    ```
 
    
