@@ -25,7 +25,7 @@ redis:
   db: 0
 elasticsearch:
   url: search:9200
-  enable: true
+  enable: false
 editorurl: http://HOST/apps/editor
 apiurl: http://drive_full:3000/apps/api
 postapiurl:  http://drive_full:3000/apps/api/saveBack

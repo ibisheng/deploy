@@ -64,7 +64,7 @@ sed -e 's/HOST/'$2'/g' workspace/config/config.sample.yml > $1/workspace/config/
 sleep 60
 
 
-sh init.sh 7 free
+sh init.sh 7 free $1
 
 
 
@@ -79,7 +79,7 @@ sleep 30
 cd -
 
 
-sh init.sh 8 free
+sh init.sh 8 free $1
 
 
 
