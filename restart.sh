@@ -26,7 +26,7 @@ docker-compose restart drive_full editor_app editor convert
 
 sleep 10
 
-cd $data/ningx
+cd $data/nginx
 
 docker-compose restart nginx
 
