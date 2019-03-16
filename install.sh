@@ -86,3 +86,4 @@ sh init.sh 8 free $1
 cd $1/ningx
 docker-compose up -d
 
+echo "在你的浏览器中打开 http://$2 即可访问毕升文档，请参看安装文档激活毕升文档"

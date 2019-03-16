@@ -36,3 +36,5 @@ docker-compose up -d
 cd -
 
 sh restart.sh
+
+echo "在你的浏览器中打开 http://$IP 即可访问毕升文档"

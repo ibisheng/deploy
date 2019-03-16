@@ -59,6 +59,12 @@
 
 3. 一键安装毕升文档云平台
 
+   由于一些环境下脚本创建网络会失败，建议在一键安装前建议手动创建docker 网络 bisheng。
+
+   ```
+   docker network create bisheng
+   ```
+
    在完成以上步骤之后，可以通过install.sh脚本来安装毕升文档
 
    ```shell
@@ -107,7 +113,7 @@
    在安装脚本（**步骤1中所下载下载脚**)本所在的目录，有一个脚本 restart.sh。执行该脚本即可重启毕升文档
 
    ```shell
-   sh start.sh
+   sh restart.sh
    ```
 
    
@@ -130,4 +136,15 @@
    sh upgrade.sh
    ```
 
-   
+4. 执行过程出现错误： Network bushing  declared as external…..  如下图
+
+   ![93D17738F207B6557723390F85D1CAA1](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/93D17738F207B6557723390F85D1CAA1.png)
+
+   这是因为有些服务器上脚本运行 docker create network bisheng 会出错。修复这个问题的方法是手动执行一下这个命令
+
+   ```shell
+   docker network create bisheng
+   ```
+
+   接下来重新执行安装过程。
+
