@@ -3,7 +3,7 @@
 # ![logo](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/favicon.ico)毕升文档云平台安装步骤
 
 
-[毕升文档](https://ibisheng.cn)| 多人协同编辑 | 在线Office| onlyOffice
+[毕升文档](https://ibisheng.cn)| onlyoffice中文 |onlyoffice部署
 
 毕升文档云平台包括drive和在线文件服务功能。其中drive实现文件的在线管理，组织结构权限，分享，团队协作等，文件的全文检索等功能；在线文件服务能够处理word,ppt,excel格式文件的**带水印预览**以及**多人协同编辑**，另外还能处理pdf，视频，音频文件的预览以及实现了100多种文本文件带语法高亮的预览 。详细介绍请参考[**毕升文档产品手册**](https://ibisheng.cn)。下面毕升文档的详细部署说明，如果你喜欢我们欢迎加入毕升文档交流群。
 
