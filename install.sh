@@ -25,12 +25,12 @@ sh pullImage.sh $tag
 
 echo "$1 $2 free" > .config
 
-mkdir $1/{service,workspace,resource,ningx}
+mkdir $1/{service,workspace,resource,nginx}
 
 cp -r service/* $1/service
 cp -r workspace/* $1/workspace
 cp -r resource/* $1/resource
-cp -r ningx/* $1/ningx
+cp -r nginx/* $1/nginx
 
 
 cd $1/service
@@ -64,7 +64,7 @@ sed -e 's/HOST/'$2'/g' workspace/config/config.sample.yml > $1/workspace/config/
 sleep 60
 
 
-sh init.sh 7 free
+sh init.sh 7 free $1
 
 
 
@@ -79,11 +79,11 @@ sleep 30
 cd -
 
 
-sh init.sh 8 free
+sh init.sh 8 free $1
 
 
 
-cd $1/ningx
+cd $1/nginx
 docker-compose up -d
 
 echo "在你的浏览器中打开 http://$2 即可访问毕升文档，请参看安装文档激活毕升文档"

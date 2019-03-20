@@ -29,7 +29,7 @@ docker-compose up -d
 cd -
 
 
-cd $data/ningx
+cd $data/nginx
 echo "reinstall nginx"
 docker-compose up -d
 
