@@ -37,7 +37,7 @@
 
 2. 安装docker以及docker-compose
 
-   毕升文档云平台所有的服务均是基于docker-compose安装的，在进行下一步安装之前，请确保你的服务器上已经安装了docker已经docker-compose。你可以使用我们准备的脚本安装,也可以自行参考资料进行安装。r如果你是使用脚步安装可以直接执行 preinstall.sh脚本
+   毕升文档云平台所有的服务均是基于docker-compose安装的，在进行下一步安装之前，请确保你的服务器上已经安装了docker已经docker-compose。你可以使用我们准备的脚本安装,也可以自行参考资料进行安装。r如果你是使用脚本安装可以直接执行 preinstall.sh脚本
 
    ```shell
    sh preinstall.sh
@@ -68,12 +68,14 @@
    在完成以上步骤之后，可以通过install.sh脚本来安装毕升文档
 
    ```shell
-   sh install.sh /data 192.168.2.108
+   sh install.sh /bisheng_data 192.168.2.108
    ```
 
-   注意：** 安装目录的结尾**不要 斜杠 “/”**，否则安装目录最好拼接会出错。**即上面脚本 "/data"不要写成“/data/”** 
+   注意：** 安装目录的结尾**不要 斜杠 “/”**，否则安装目录最好拼接会出错。**即上面脚本 "/bisheng_data"不要写成“/bisheng_data/”**
 
-   该安装命令需要两个参数：一个是参数是安装目录，该目录是毕升文档的工作目录，所以的数据都会保存在该目录，需要保证该目录所有在的存储设备上有较大的空间。在上面的脚步是我们是使用 /data目录作为安装目录；另外一个参数是IP，安装完成之后可以通过这个http://ip 来访问毕升文档；也可以是域名，即安装完成之后也可以通过域名来访问毕升文档
+   **另外需要强调的是，不要使用有数据的目录作为安装目录，<span style="color: red;">*<u>因为初次安装过程中会清空该目录</u>*</span>**
+
+   该安装命令需要两个参数：一个是参数是安装目录，该目录是毕升文档的工作目录，所以的数据都会保存在该目录，需要保证该目录所有在的存储设备上有较大的空间。在上面的脚本是我们是使用 /bisheng_data目录作为安装目录；另外一个参数是IP，安装完成之后可以通过这个http://ip 来访问毕升文档；也可以是域名，即安装完成之后也可以通过域名来访问毕升文档
 
 4. 测试
 
@@ -99,9 +101,9 @@
 
 完成前面5步操作之后，需要申请免费激活系统即可进行正常使用。参考链接：[免费激活](https://ibisheng.cn/apps/blog/posts/license.html)
 
-毕升文档安装默认是自带ngix配置的，其中nginx的配置文件在安装目录下。如果安装安装目录是 /data 具体路径则是： /data/service/nginx/config/conf.d/bisheng.conf 。
+毕升文档安装默认是自带ngix配置的，其中nginx的配置文件在安装目录下。如果安装安装目录是 /bisheng_data 具体路径则是： /bisheng_data/service/nginx/config/conf.d/bisheng.conf 。
 
-如果你需要配置nginx 的https，则可以将https证书放在/data/service/nginx/keys目录下，该目录在docker中的路径是/keys，**配置时路径应该填写docker的路径**
+如果你需要配置nginx 的https，则可以将https证书放在/bisheng_data/service/nginx/keys目录下，该目录在docker中的路径是/keys，**配置时路径应该填写docker的路径**
 
 ## 集成毕升文档文件服务，实现Office在线预览和编辑
 
