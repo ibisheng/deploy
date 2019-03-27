@@ -27,9 +27,6 @@ elasticsearch:
   url: search:9200
   enable: false
 editorurl: /apps/editor
-apiurl: http://drive_full:3000/apps/api
-postapiurl:  http://drive_full:3000/apps/api/saveBack
-queryapiurl: http://drive_full:3000/apps/api/query
 wechat:
   openwebsiteapp: # 微信开放平台网站应用
     appid: wxffffffffffffffff
