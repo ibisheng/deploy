@@ -110,7 +110,29 @@
 上面的步骤完成之后，你就可以免费使用毕升文档包含drive功能以及在线文件服务功能。另外如果你的文件是存储在邮件附件，ERP，以及其他的各种在线系统，你也可以使用已经部署完成的毕升文档云平台的在线文件服务来来实现Office在线预览和编辑。你所需要做的是实现相关API就可以免费使用毕升在线文件服务。相关API请参考[**毕升文档文件在线服务集成API**](
 ## 相关问题
 
-1. 安装docker过程出错
+1. 如何查找毕升文档的技术文档
+
+   毕升文档的全部技术文档可以去毕升官方博客文章目录：链接：<https://ibisheng.cn/apps/blog/categories/>
+
+   这里可以查阅毕升文档的全部技术文档。
+
+2. 安装完成以后管理员登录的默认用户名和密码是什么？
+
+   管理员默认用户名为： admin ;密码为 bisheng
+
+3. 为什么激活了之后还是重定向到了控制台？
+
+   如果你没有激活，需要激活毕升文档，激活链接：<https://ibisheng.cn/apps/blog/posts/license.html> ；
+
+   如果激活失败，检查是否是网络原因，或者试试离线激活，离线激活链接：<https://ibisheng.cn/apps/blog/posts/license.html#%E6%89%8B%E5%8A%A8%E7%A6%BB%E7%BA%BF%E6%BF%80%E6%B4%BB>
+
+   正确激活完成之后，需要重启所有的结点，在安装脚本的目录下运行 restart.sh脚本
+
+   ```shell
+   sh restart.sh
+   ```
+
+4. 安装docker过程出错
 
    ![4407CA1C7C302F19E598F009FC8869FB](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/4407CA1C7C302F19E598F009FC8869FB.jpg)
 
@@ -120,7 +142,7 @@
 
    一般来说，docker环境安装无误之后，毕升文档安装会比较顺利
 
-2. 如何重启所有的服务
+5. 如何重启所有的服务
 
    在安装脚本（**步骤1中所下载下载脚**)本所在的目录，有一个脚本 restart.sh。执行该脚本即可重启毕升文档
 
@@ -130,7 +152,7 @@
 
    
 
-3. 如何重写安装毕升文档
+6. 如何重写安装毕升文档
 
    执行脚本 reinstall.sh，该脚本将重新安装所有的结点，**但是会保留数据和配置文件**
 
@@ -140,7 +162,7 @@
 
    
 
-4. 如何升级毕升文档
+7. 如何升级毕升文档
 
    执行脚本upgrade.sh，**该脚本会保留所有的数据和配置文件**
 
@@ -148,7 +170,7 @@
    sh upgrade.sh
    ```
 
-5. 执行过程出现错误： Network bushing  declared as external…..  如下图
+8. 执行过程出现错误： Network bushing  declared as external…..  如下图
 
    ![93D17738F207B6557723390F85D1CAA1](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/93D17738F207B6557723390F85D1CAA1.png)
 
