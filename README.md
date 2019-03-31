@@ -11,7 +11,7 @@
 
 ## 硬件要求
 
-安装过程时在**centos7**系统下进行的，系统为4核8G虚拟云主机服务器。建议使用新安装的系统来安装毕升文档云平台。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
+安装过程在**centos7**以及**ubuntu 18.04LTS**系统下，硬件配置2核8G以及4核8G服务器均进行过测试。建议使用新安装的系统来安装毕升文档云平台。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
 
 ## 系统要求
 
@@ -35,23 +35,57 @@
 
 2. 安装docker以及docker-compose
 
-   毕升文档云平台所有的服务均是基于docker-compose安装的，在进行下一步安装之前，请确保你的服务器上已经安装了docker已经docker-compose。你可以使用我们准备的脚本安装,也可以自行参考资料进行安装。r如果你是使用脚本安装可以直接执行 preinstall.sh脚本
+   核8G服务器均进行过测试。建议使用新安装的系统来安装毕升文档云平台。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
 
-   ```shell
-   sh preinstall.sh
-   ```
+   ## 系统要求
 
-   如果自行安装可以参考docker安装资料：**[docker 安装](https://docs.docker.com/install/linux/docker-ce/centos/#install-docker-ce)**，而docker-compose安装则可以执行如下命令进行：
+   毕升文档安装完成自带nginx，并且配置好全部全部的路径。**请确保你的系统中的80，443端口没有被占用**
 
-   ```shell
-   curl -L https://get.daocloud.io/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` \
-      -o /usr/local/bin/docker-compose
-   chmod +x /usr/local/bin/docker-compose
-   systemctl start docker
-   systemctl enable docker
-   ```
+   ## 步骤
 
-   在安装完成之后，可以通过命令行参看docker以及dockder-compose的版本
+   1. 从[github](https://github.com/ibisheng/deploy.git)上clone相关的部署脚本到服务器上
+
+      ```shell
+      git clone https://github.com/ibisheng/onlyoffice-deploy.git
+      cd deploy
+      ```
+
+      或者你也可以从国内代码托管网站[码云](https://gitee.com/ibisheng) 上clone毕升文档部署脚本到服务器上
+
+      ```
+      git clone https://gitee.com/ibisheng/deploy.git
+      cd deploy
+      ```
+
+   2. 安装docker以及docker-compose，
+
+      **这一步是准备毕升文档运行的系统条件，并不是安装毕升文档。**
+
+      毕升文档云平台所有的服务均是基于docker-compose安装的，在进行下一步安装之前，**请确保你的服务器上已经安装了docker和docker-compose。**你可以使用我们准备的脚本安装,也可以自行参考资料进行安装。
+
+      自行安装Docker 参考链接 ：<https://docs.docker.com/install/>；而docker-compose安装则可以执行如下命令：
+
+      ```shell
+      curl -L https://get.daocloud.io/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` \
+         -o /usr/local/bin/docker-compose
+      chmod +x /usr/local/bin/docker-compose
+      systemctl start docker
+      systemctl enable docker
+      ```
+
+      你也可以选择使用我们提供的脚本安装docker：**如果是你的系统是centos**
+
+      ```shell
+      bash preinstall.sh
+      ```
+
+      **如果你的系统是ubuntu，**则可以执行：
+
+      ```shell
+      bash preinstall-ubuntu.sh
+      ```
+
+      
 
    ![image-20190225144902164](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-version.png)
 
@@ -72,7 +106,7 @@
    在完成以上步骤之后，可以通过install.sh脚本来安装毕升文档
 
    ```shell
-   sh install.sh /bisheng_data # 请确保/bisheng_data目录没有其他数据
+   bash install.sh /bisheng_data # 请确保/bisheng_data目录没有其他数据
    ```
 
    注意：** 安装目录的结尾**不要 斜杠 “/”**，否则安装目录最好拼接会出错。**即上面脚本 "/bisheng_data"不要写成“/bisheng_data/”**
@@ -133,7 +167,7 @@
    正确激活完成之后，需要重启所有的结点，在安装脚本的目录下运行 restart.sh脚本
 
    ```shell
-   sh restart.sh
+   bash restart.sh
    ```
 
 4. 安装docker过程出错
@@ -151,7 +185,7 @@
    在安装脚本（**步骤1中所下载下载脚**)本所在的目录，有一个脚本 restart.sh。执行该脚本即可重启毕升文档
 
    ```shell
-   sh restart.sh
+   bash restart.sh
    ```
 
    
@@ -161,7 +195,7 @@
    执行脚本 reinstall.sh，该脚本将重新安装所有的结点，**但是会保留数据和配置文件**
 
    ```shell
-   sh reinstall.sh
+   bash reinstall.sh
    ```
 
    
@@ -171,7 +205,7 @@
    执行脚本upgrade.sh，**该脚本会保留所有的数据和配置文件**
 
    ```shell
-   sh upgrade.sh
+   bash upgrade.sh
    ```
 
 8. 执行过程出现错误： Network bushing  declared as external…..  如下图
