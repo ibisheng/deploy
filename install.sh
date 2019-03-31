@@ -12,7 +12,7 @@ echo "copy resource data"
 
 rm -rf $1/*
 docker rm nginx minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongod  drive_full editor_app convert editor -f  1 > /dev/null 2>&1
-docker network create bisheng 1 > /dev/null 2>&1
+docker network create bisheng
 
 export basedir=$1
 export tag=free
@@ -20,7 +20,10 @@ sh pullImage.sh $tag
 
 echo "$1 free" > .config
 
-mkdir $1/{service,workspace,resource,nginx}
+mkdir $1/service
+mkdir $1/workspace
+mkdir $1/resource
+mkdir $1/nginx
 
 cp -r service/* $1/service
 cp -r workspace/* $1/workspace
@@ -32,12 +35,12 @@ cd $1/service
 
 sysctl -w vm.max_map_count=262144
 mkdir -p dgraph
-mkdir -p mongod/{db,log}
+mkdir -p mongod/db mongod/log
 touch  mongod/log/mongod.log
-mkdir -p rabbitmq/{data}
-mkdir -p minio/{config,data}
-mkdir -p elasticsearch/{data,logs}
-mkdir -p nginx/{temp,keys}
+mkdir -p rabbitmq/data
+mkdir -p minio/config minio/data
+mkdir -p elasticsearch/data elasticsearch/logs
+mkdir -p nginx/temp nginx/keys
 touch  nginx/temp/error.log
 touch  nginx/temp/access.log
 #mkdir  nginx/config/conf.d
