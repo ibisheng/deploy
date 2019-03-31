@@ -13,4 +13,4 @@ echo ${arr[0]} ${arr[1]};
 data=${arr[0]}
 tag=${arr[1]}
 
-sh init.sh $1 $tag $data
+bash init.sh $1 $tag $data

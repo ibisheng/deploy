@@ -7,4 +7,4 @@ echo "remove service"
 docker rm minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongod -f  1 > /dev/null 2>&1
 docker network create bisheng 1 > /dev/null 2>&1
 
-sh upgrade.sh
+bash upgrade.sh

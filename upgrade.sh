@@ -13,7 +13,7 @@ tag=${arr[1]}
 export basedir=$data
 export tag=$tag
 
-sh pullImage.sh $tag
+bash pullImage.sh $tag
 
 cd $data/service
 echo "reinstall service"
@@ -34,6 +34,6 @@ docker-compose up -d
 
 cd -
 
-sh restart.sh
+bash restart.sh
 
 echo "在你的浏览器中打开 http://IP 即可访问毕升文档"

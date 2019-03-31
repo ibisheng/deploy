@@ -16,7 +16,7 @@ docker network create bisheng
 
 export basedir=$1
 export tag=free
-sh pullImage.sh $tag
+bash pullImage.sh $tag
 
 echo "$1 free" > .config
 
@@ -63,7 +63,7 @@ cd -
 sleep 60
 
 
-sh init.sh 7 free $1
+bash init.sh 7 free $1
 
 
 
@@ -78,7 +78,7 @@ sleep 30
 cd -
 
 
-sh init.sh 8 free $1
+bash init.sh 8 free $1
 
 
 
