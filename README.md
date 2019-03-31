@@ -68,14 +68,14 @@
    在完成以上步骤之后，可以通过install.sh脚本来安装毕升文档
 
    ```shell
-   sh install.sh /bisheng_data 192.168.2.108
+   sh install.sh /bisheng_data # 请确保/bisheng_data目录没有其他数据
    ```
 
    注意：** 安装目录的结尾**不要 斜杠 “/”**，否则安装目录最好拼接会出错。**即上面脚本 "/bisheng_data"不要写成“/bisheng_data/”**
 
    **另外需要强调的是，不要使用有数据的目录作为安装目录，<span style="color: red;">*<u>因为初次安装过程中会清空该目录</u>*</span>**
 
-   该安装命令需要两个参数：一个是参数是安装目录，该目录是毕升文档的工作目录，所以的数据都会保存在该目录，需要保证该目录所有在的存储设备上有较大的空间。在上面的脚本是我们是使用 /bisheng_data目录作为安装目录；另外一个参数是IP，安装完成之后可以通过这个http://ip 来访问毕升文档；也可以是域名，即安装完成之后也可以通过域名来访问毕升文档
+   该安装命令需要一个参数来指定安装目录，该目录是毕升文档的工作目录，所以的数据都会保存在该目录，需要保证该目录所有在的存储设备上有较大的空间。例如在上面的脚本是我们是使用 /bisheng_data目录作为安装目录
 
 4. 测试
 
@@ -91,7 +91,7 @@
 
 5. 如何使用
 
-   1. 以上安装完成之后，输入地址 http://192.168.2.108 或者http://hostname  即可进入到毕升文档主页面。其中IP为第三步安装过程中指定的IP。
+   1. 以上安装完成之后，输入地址 http://192.168.2.108 或者http://hostname  即可进入到毕升文档主页面。其中IP，hostname时安装毕升文档的服务器的IP或者主机名，或者指向该服务器的域名
 
    ![image-20190225153147382](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/ibisheng.png)
 
@@ -110,7 +110,17 @@
 上面的步骤完成之后，你就可以免费使用毕升文档包含drive功能以及在线文件服务功能。另外如果你的文件是存储在邮件附件，ERP，以及其他的各种在线系统，你也可以使用已经部署完成的毕升文档云平台的在线文件服务来来实现Office在线预览和编辑。你所需要做的是实现相关API就可以免费使用毕升在线文件服务。相关API请参考[**毕升文档文件在线服务集成API**](
 ## 相关问题
 
-1. 如何重启所有的服务
+1. 安装docker过程出错
+
+   ![4407CA1C7C302F19E598F009FC8869FB](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/4407CA1C7C302F19E598F009FC8869FB.jpg)
+
+   这个错误可以参考链接[docker 安装报错 container-selinux >= 2.9 解决](https://blog.csdn.net/qq_41772936/article/details/81080284)
+
+   docker安装出错一般时由于系统层次的原因导致的。请参考相关资料修复。另外为了安装的顺利，建议centos系统使用使用7以上版本。其他linux系统也尽量使用较新版本。
+
+   一般来说，docker环境安装无误之后，毕升文档安装会比较顺利
+
+2. 如何重启所有的服务
 
    在安装脚本（**步骤1中所下载下载脚**)本所在的目录，有一个脚本 restart.sh。执行该脚本即可重启毕升文档
 
@@ -120,7 +130,7 @@
 
    
 
-2. 如何重写安装毕升文档
+3. 如何重写安装毕升文档
 
    执行脚本 reinstall.sh，该脚本将重新安装所有的结点，**但是会保留数据和配置文件**
 
@@ -130,7 +140,7 @@
 
    
 
-3. 如何升级毕升文档
+4. 如何升级毕升文档
 
    执行脚本upgrade.sh，**该脚本会保留所有的数据和配置文件**
 
@@ -138,7 +148,7 @@
    sh upgrade.sh
    ```
 
-4. 执行过程出现错误： Network bushing  declared as external…..  如下图
+5. 执行过程出现错误： Network bushing  declared as external…..  如下图
 
    ![93D17738F207B6557723390F85D1CAA1](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/93D17738F207B6557723390F85D1CAA1.png)
 
