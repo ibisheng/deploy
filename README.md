@@ -19,7 +19,7 @@
 
 毕升Office安装完成自带nginx，并且配置好全部全部的路径。**请确保你的系统中的80，443端口没有被占用**
 
-## 步骤
+## 安装步骤
 
 1. 从[github](https://github.com/ibisheng/deploy.git)上clone相关的部署脚本到服务器上
 
@@ -37,61 +37,37 @@
 
 2. 安装docker以及docker-compose
 
-   核8G服务器均进行过测试。建议使用新安装的系统来安装毕升Office云平台。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
+   **这一步是准备毕升Office运行的系统条件，并不是安装毕升Office。**
 
-   ## 系统要求
+   毕升Office云平台所有的服务均是基于docker-compose安装的，在进行下一步安装之前，**请确保你的服务器上已经安装了docker和docker-compose。**你可以使用我们准备的脚本安装,也可以自行参考资料进行安装。
 
-   毕升Office安装完成自带nginx，并且配置好全部全部的路径。**请确保你的系统中的80，443端口没有被占用**
+   自行安装Docker 参考链接 ：<https://docs.docker.com/install/>；而docker-compose安装则可以执行如下命令：
 
-   ## 步骤
+   ```shell
+   curl -L https://get.daocloud.io/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` \
+      -o /usr/local/bin/docker-compose
+   chmod +x /usr/local/bin/docker-compose
+   systemctl start docker
+   systemctl enable docker
+   ```
 
-   1. 从[github](https://github.com/ibisheng/deploy.git)上clone相关的部署脚本到服务器上
+   你也可以选择使用我们提供的脚本安装docker：**如果是你的系统是centos**
 
-      ```shell
-      git clone https://github.com/ibisheng/onlyoffice-deploy.git
-      cd deploy
-      ```
+   ```shell
+   bash preinstall.sh
+   ```
 
-      或者你也可以从国内代码托管网站[码云](https://gitee.com/ibisheng) 上clone毕升Office部署脚本到服务器上
+   **如果你的系统是ubuntu，**则可以执行：
 
-      ```
-      git clone https://gitee.com/ibisheng/deploy.git
-      cd deploy
-      ```
+   ```shell
+   bash preinstall-ubuntu.sh
+   ```
 
-   2. 安装docker以及docker-compose，
-
-      **这一步是准备毕升Office运行的系统条件，并不是安装毕升Office。**
-
-      毕升Office云平台所有的服务均是基于docker-compose安装的，在进行下一步安装之前，**请确保你的服务器上已经安装了docker和docker-compose。**你可以使用我们准备的脚本安装,也可以自行参考资料进行安装。
-
-      自行安装Docker 参考链接 ：<https://docs.docker.com/install/>；而docker-compose安装则可以执行如下命令：
-
-      ```shell
-      curl -L https://get.daocloud.io/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` \
-         -o /usr/local/bin/docker-compose
-      chmod +x /usr/local/bin/docker-compose
-      systemctl start docker
-      systemctl enable docker
-      ```
-
-      你也可以选择使用我们提供的脚本安装docker：**如果是你的系统是centos**
-
-      ```shell
-      bash preinstall.sh
-      ```
-
-      **如果你的系统是ubuntu，**则可以执行：
-
-      ```shell
-      bash preinstall-ubuntu.sh
-      ```
-
-      
+   
 
    ![image-20190225144902164](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-version.png)
 
-3. 一键安装毕升Office云平台
+3. 一键安装毕升Office
 
    由于一些环境下脚本创建网络会失败，建议在一键安装前建议手动创建docker 网络 bisheng。
 
@@ -119,21 +95,21 @@
 
 4. 测试
 
-   待上一步骤脚本执行完成之后，先检查所有的docker容易是否全部正常启动。
+待上一步骤脚本执行完成之后，先检查所有的docker容易是否全部正常启动。
 
-   ```shell
-   docker ps -a
-   ```
+```shell
+docker ps -a
+```
 
-   ![image-20190312214341594](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190312214341594.png)
+![image-20190312214341594](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190312214341594.png)
 
-   **其中tools这个容器正常状态是Exit的。**
+**其中tools这个容器正常状态是Exit的。**
 
 5. 如何使用
 
-   1. 以上安装完成之后，输入地址 http://192.168.2.108 或者http://hostname  即可进入到毕升Office主页面。其中IP，hostname时安装毕升Office的服务器的IP或者主机名，或者指向该服务器的域名
+以上安装完成之后，输入地址 http://192.168.2.108 或者http://hostname  即可进入到毕升Office主页面。其中IP，hostname时安装毕升Office的服务器的IP或者主机名，或者指向该服务器的域名
 
-   ![image-20190225153147382](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/ibisheng.png)
+![image-20190225153147382](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/ibisheng.png)
 
 
 
