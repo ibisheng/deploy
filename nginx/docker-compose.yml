@@ -7,7 +7,7 @@ services:
     volumes:
     - ${basedir}/service/nginx/config:/config:rw
     - ${basedir}/service/nginx/temp:/temp:rw
-    - ${basedir}/service/keys/keys:/keys:rw
+    - ${basedir}/service/nginx/keys:/keys:rw
     ports:
     - 80:80
     - 443:443
