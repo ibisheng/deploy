@@ -63,7 +63,7 @@ cd -
 sleep 60
 
 
-bash init.sh 7 free $1
+#bash init.sh 7 free $1
 
 
 
@@ -78,7 +78,7 @@ sleep 30
 cd -
 
 
-bash init.sh 8 free $1
+bash init.sh 15 free $1
 
 
 
