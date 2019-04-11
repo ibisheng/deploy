@@ -78,9 +78,9 @@ sleep 30
 cd -
 
 
-bash init.sh 15 free $1
-
-
+bash init.sh 7 free $1
+sleep 20
+bash init.sh 8 free $1
 
 cd $1/nginx
 docker-compose up -d
