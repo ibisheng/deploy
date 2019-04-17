@@ -21,7 +21,7 @@ docker-compose up -d
 cd -
 sleep 30
 
-cp -r resource/* $1/resource
+cp -r resource/* $data/resource
 bash initTools.sh 2
 
 cd $data/workspace
