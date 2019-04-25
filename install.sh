@@ -63,7 +63,7 @@ cd -
 sleep 60
 
 
-bash init.sh 7 free $1
+#bash init.sh 7 free $1
 
 
 
@@ -78,12 +78,12 @@ sleep 30
 cd -
 
 
+bash init.sh 7 free $1
+sleep 20
 bash init.sh 8 free $1
-
-
 
 cd $1/nginx
 docker-compose up -d
 
 echo "你开始使用毕升Office即表示你同意链接 https://ibisheng.cn/apps/blog/posts/agreement.html 中的内容"
-echo "在你的浏览器中打开 http://IP 即可访问毕升文档，请参看安装文档激活毕升文档"
+echo "在你的浏览器中打开 http://IP 即可访问毕升office，请参看安装文档激活毕升office"

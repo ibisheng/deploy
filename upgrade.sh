@@ -21,6 +21,9 @@ docker-compose up -d
 cd -
 sleep 30
 
+cp -r resource/* $data/resource
+bash initTools.sh 2
+
 cd $data/workspace
 echo "reinstall apps"
 docker-compose up -d
