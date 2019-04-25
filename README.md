@@ -9,9 +9,31 @@
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9139c206ed47bb0fdf7e1f5468c447f0e9193354204659b1591477c0f70472da"><img border="0" src="https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/%E6%AF%95%E5%8D%87%E6%96%87%E6%A1%A3%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png" alt="毕升Office交流群" title="毕升Office交流群"></a>
 
-## 硬件要求
+也可以在微信中搜索毕升Office文档小程序
 
-安装过程在**centos7**以及**ubuntu 18.04LTS**系统下，硬件配置2核8G以及4核8G服务器均进行过测试。建议使用新安装的系统来安装毕升Office云平台。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
+![扫码_搜索联合传播样式-微信标准绿版](https://public-bisheng.nodoc.cn/resource/扫码_搜索联合传播样式-微信标准绿版.png)
+
+## 
+
+## 安装前必读
+
+安装过程在**centos7**以及**ubuntu 18.04LTS**系统下，硬件配置2核8G以及4核8G服务器均进行过测试。建议使用新安装的系统来安装毕升Office。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
+
+1. <span style="color:red;font-weight:bold;">硬件要求</span>
+
+   毕升Office是企业应用系统，主要是考虑在服务器上运行，对硬件资源有一定的要求。在实际测试安装中，cpu<span style="color:red;font-weight:bold;">不应该低于2核，内存4G</span>；实际线上生产运行，根据使用人数，增加硬件配置，比较推荐的配置为：毕升Office完整系统推荐4核8G；如果使用频率不高，2核内存4G/8G也可以。
+
+   另外：毕升Office安装采用的是docker安装,一般用户的docker 镜像是存储在系统目录中，<span style="color:red;font-weight:bold;">建议系统硬盘有15G剩余空间</span>，另外还应该有20G的数据空间（这个根据用户实际使用量来决定。）。在实际过程中，用户在升级时会重新下载新的镜像，在新的安装脚本中，无用的镜像会被删除，如果是以前安装的用户，你可以自行删除无用镜像，或者更新脚本，执行升级（bash upgrade.sh）后会删除镜像
+
+2. 关于vmware虚拟机
+
+   在实际的安装过程中，vmware虚拟机文件较多的情况是在虚拟机外面无法通过 IP来访问毕升Office。此时首先检查毕升office是否安装正确，检查方法是登录到虚拟机，使用命令 curl http://localhost 查看是否有如下输出
+
+   ![image-20190425112838919](https://public-bisheng.nodoc.cn/resource/image-20190425112838919.png)
+
+   如果输出正常，则说明毕升Office安装没有问题。此时，需要检查是否是vmware网络问题。
+
+## 用户协议
 
 在开始安装使用前请阅读毕升Office免费使用用户协议：[协议链接](https://ibisheng.cn/apps/blog/posts/agreement.html)
 
