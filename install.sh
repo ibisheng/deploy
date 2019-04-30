@@ -88,5 +88,8 @@ bash fontsService.sh
 cd $1/nginx
 docker-compose up -d
 
+cd -
+bash clearImages.sh
+
 echo "你开始使用毕升Office即表示你同意链接 https://ibisheng.cn/apps/blog/posts/agreement.html 中的内容"
 echo "在你的浏览器中打开 http://IP 即可访问毕升office，请参看安装文档激活毕升office"
