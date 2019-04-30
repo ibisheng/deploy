@@ -9,7 +9,7 @@ echo ${arr[0]} ${arr[1]};
 data=${arr[0]}
 tag=${arr[1]}
 
-rm -rf data/workspace/fonts/*
+rm -rf $data/workspace/fonts/*
 
 cp -r workspace/fonts/* $data/workspace/fonts
 
