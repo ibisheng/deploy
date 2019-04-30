@@ -13,4 +13,4 @@ rm -rf $data/workspace/fonts/*
 
 cp -r workspace/fonts/* $data/workspace/fonts
 
-bash init.sh $1 $tag $data
+bash init.sh 64 $tag $data
