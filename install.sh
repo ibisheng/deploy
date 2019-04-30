@@ -82,6 +82,9 @@ bash init.sh 7 free $1
 sleep 20
 bash init.sh 8 free $1
 
+bash fontsService.sh
+
+
 cd $1/nginx
 docker-compose up -d
 

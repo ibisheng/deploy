@@ -37,6 +37,8 @@ docker-compose up -d
 
 cd -
 
+bash fontsService.sh
+
 bash restart.sh
 
 bash clearImages.sh
