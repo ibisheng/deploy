@@ -1,17 +1,17 @@
 
 
-# ![logo](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/favicon.ico)毕升Office云平台安装步骤
+# ![logo](https://bisheng-public.oss-cn-zhangjiakou.aliyuncs.com/resource/favicon.ico)毕升Office云平台安装步骤
 
 
 [毕升Office](https://bishengoffice.com)| onlyoffice中文 |onlyoffice部署
 
 毕升Office云平台包括drive和在线文件服务功能。其中drive实现文件的在线管理，组织结构权限，分享，团队协作等，文件的全文检索等功能；在线文件服务能够处理word,ppt,excel格式文件的**带水印预览**以及**多人协同编辑**，另外还能处理pdf，视频，音频文件的预览以及实现了100多种文本文件带语法高亮的预览 。详细介绍请参考[**毕升Office产品手册**](https://bishengoffice.com)。下面毕升Office的详细部署说明，如果你喜欢我们欢迎加入毕升Office交流群。
 
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9139c206ed47bb0fdf7e1f5468c447f0e9193354204659b1591477c0f70472da"><img border="0" src="https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/%E6%AF%95%E5%8D%87%E6%96%87%E6%A1%A3%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png" alt="毕升Office交流群" title="毕升Office交流群"></a>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9139c206ed47bb0fdf7e1f5468c447f0e9193354204659b1591477c0f70472da"><img border="0" src="https://bisheng-public.oss-cn-zhangjiakou.aliyuncs.com/resource/%E6%AF%95%E5%8D%87%E6%96%87%E6%A1%A3%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png" alt="毕升Office交流群" title="毕升Office交流群"></a>
 
 也可以在微信中搜索毕升Office文档小程序
 
-![扫码_搜索联合传播样式-微信标准绿版](https://public-bisheng.nodoc.cn/resource/扫码_搜索联合传播样式-微信标准绿版.png)
+![扫码_搜索联合传播样式-微信标准绿版](https://bisheng-public.nodoc.cn/resource/扫码_搜索联合传播样式-微信标准绿版.png)
 
 ## 
 
@@ -29,7 +29,7 @@
 
    在实际的安装过程中，vmware虚拟机文件较多的情况是在虚拟机外面无法通过 IP来访问毕升Office。此时首先检查毕升office是否安装正确，检查方法是登录到虚拟机，使用命令 curl http://localhost 查看是否有如下输出
 
-   ![image-20190425112838919](https://public-bisheng.nodoc.cn/resource/image-20190425112838919.png)
+   ![image-20190425112838919](https://bisheng-public.nodoc.cn/resource/image-20190425112838919.png)
 
    如果输出正常，则说明毕升Office安装没有问题。此时，需要检查是否是vmware网络问题。
 
@@ -87,7 +87,7 @@
 
    
 
-   ![image-20190225144902164](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-version.png)
+   ![image-20190225144902164](https://bisheng-public.oss-cn-zhangjiakou.aliyuncs.com/resource/docker-version.png)
 
 3. 一键安装毕升Office
 
@@ -123,7 +123,7 @@
 docker ps -a
 ```
 
-![image-20190312214341594](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190312214341594.png)
+![image-20190312214341594](https://bisheng-public.oss-cn-zhangjiakou.aliyuncs.com/resource/image-20190312214341594.png)
 
 **其中tools这个容器正常状态是Exit的。**
 
@@ -131,7 +131,7 @@ docker ps -a
 
 以上安装完成之后，输入地址 http://192.168.2.108 或者http://hostname  即可进入到毕升Office主页面。其中IP，hostname时安装毕升Office的服务器的IP或者主机名，或者指向该服务器的域名
 
-![image-20190225153147382](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/ibisheng.png)
+![image-20190225153147382](https://bisheng-public.oss-cn-zhangjiakou.aliyuncs.com/resource/ibisheng.png)
 
 
 
