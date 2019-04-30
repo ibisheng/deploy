@@ -11,6 +11,6 @@ tag=${arr[1]}
 
 rm -rf data/workspace/fonts/*
 
-cp -r workspace/fonts/* data/workspace/fonts
+cp -r workspace/fonts/* $data/workspace/fonts
 
 bash init.sh $1 $tag $data
