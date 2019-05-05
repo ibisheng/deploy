@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-if [ ! -d userFonts  ];then
-  mkdir userFonts
-fi
+
 if [  -n "$1" ] ;then
     echo "你指定了字体目录，请确保该目录下有字体文件"
+    if [ ! -d userFonts  ];then
+        mkdir userFonts
+    fi
     cp $1/* userFonts
 fi
 
