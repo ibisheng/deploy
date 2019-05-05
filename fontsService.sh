@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+
+
+if [  -n "$1" ] ;then
+    echo "你指定了字体目录，请确保该目录下有字体文件"
+    if [ ! -d userFonts  ];then
+        mkdir userFonts
+    fi
+    cp $1/* userFonts
+fi
+
+
 var=$(cat .config)
 arr=()
 for element in $var
@@ -12,6 +23,8 @@ tag=${arr[1]}
 rm -rf $data/workspace/fonts/*
 
 cp -r workspace/fonts/* $data/workspace/fonts
+cp -r userFonts/* $data/workspace/fonts
+
 
 bash init.sh 64 $tag $data
 
