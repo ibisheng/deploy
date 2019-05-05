@@ -2,7 +2,7 @@
 
 
 if [  -n "$1" ] ;then
-    echo "你指定了字体目录，请确保该目录下有字体文件"
+    echo "你指定了字体目录，请确保该目录下有字体文件，同时请确保你对这些字体拥有版权"
     if [ ! -d userFonts  ];then
         mkdir userFonts
     fi
