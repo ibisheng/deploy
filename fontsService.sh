@@ -23,7 +23,10 @@ tag=${arr[1]}
 rm -rf $data/workspace/fonts/*
 
 cp -r workspace/fonts/* $data/workspace/fonts
-cp -r userFonts/* $data/workspace/fonts
+if [ -d userFonts  ];then
+        cp -r userFonts/* $data/workspace/fonts
+fi
+
 
 
 bash init.sh 64 $tag $data
