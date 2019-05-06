@@ -9,9 +9,31 @@
 
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9139c206ed47bb0fdf7e1f5468c447f0e9193354204659b1591477c0f70472da"><img border="0" src="https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/%E6%AF%95%E5%8D%87%E6%96%87%E6%A1%A3%E4%BA%A4%E6%B5%81%E7%BE%A4%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png" alt="毕升Office交流群" title="毕升Office交流群"></a>
 
-## 硬件要求
+也可以在微信中搜索毕升Office文档小程序
 
-安装过程在**centos7**以及**ubuntu 18.04LTS**系统下，硬件配置2核8G以及4核8G服务器均进行过测试。建议使用新安装的系统来安装毕升Office云平台。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
+![扫码_搜索联合传播样式-微信标准绿版](https://public-bisheng.nodoc.cn/resource/扫码_搜索联合传播样式-微信标准绿版.png)
+
+## 
+
+## 安装前必读
+
+安装过程在**centos7**以及**ubuntu 18.04LTS**系统下，硬件配置2核8G以及4核8G服务器均进行过测试。建议使用新安装的系统来安装毕升Office。需要注意的是所有的安装都是root用户执行的。如果您的安装环境不能使用root用户，理论上是不会有问题的，如果碰到权限相关问题请自行搜索资料解决。
+
+1. <span style="color:red;font-weight:bold;">硬件要求</span>
+
+   毕升Office是企业应用系统，主要是考虑在服务器上运行，对硬件资源有一定的要求。在实际测试安装中，cpu<span style="color:red;font-weight:bold;">不应该低于2核，内存4G</span>；实际线上生产运行，根据使用人数，增加硬件配置，比较推荐的配置为：毕升Office完整系统推荐4核8G；如果使用频率不高，2核内存4G/8G也可以。
+
+   另外：毕升Office安装采用的是docker安装,一般用户的docker 镜像是存储在系统目录中，<span style="color:red;font-weight:bold;">建议系统硬盘有15G剩余空间</span>，另外还应该有20G的数据空间（这个根据用户实际使用量来决定。）。在实际过程中，用户在升级时会重新下载新的镜像，在新的安装脚本中，无用的镜像会被删除，如果是以前安装的用户，你可以自行删除无用镜像，或者更新脚本，执行升级（bash upgrade.sh）后会删除镜像
+
+2. 关于vmware虚拟机
+
+   在实际的安装过程中，vmware虚拟机文件较多的情况是在虚拟机外面无法通过 IP来访问毕升Office。此时首先检查毕升office是否安装正确，检查方法是登录到虚拟机，使用命令 curl http://localhost 查看是否有如下输出
+
+   ![image-20190425112838919](https://public-bisheng.nodoc.cn/resource/image-20190425112838919.png)
+
+   如果输出正常，则说明毕升Office安装没有问题。此时，需要检查是否是vmware网络问题。
+
+## 用户协议
 
 在开始安装使用前请阅读毕升Office免费使用用户协议：[协议链接](https://ibisheng.cn/apps/blog/posts/agreement.html)
 
@@ -126,75 +148,4 @@ docker ps -a
 上面的步骤完成之后，你就可以免费使用毕升Office包含drive功能以及在线文件服务功能。另外如果你的文件是存储在邮件附件，ERP，以及其他的各种在线系统，你也可以使用已经部署完成的毕升Office云平台的在线文件服务来来实现Office在线预览和编辑。你所需要做的是实现相关API就可以免费使用毕升在线文件服务。相关API请参考[**毕升Office文件在线服务集成API**](
 ## 相关问题
 
-1. 如何查找毕升Office的技术文档
-
-   毕升Office的全部技术文档可以去毕升官方博客文章目录：链接：<https://ibisheng.cn/apps/blog/categories/>
-
-   这里可以查阅毕升Office的全部技术文档。
-
-2. 安装完成以后管理员登录的默认用户名和密码是什么？
-
-   管理员默认用户名为： admin ;密码为 bisheng
-
-3. 为什么激活了之后还是重定向到了控制台？
-
-   如果你没有激活，需要激活毕升Office，激活链接：<https://ibisheng.cn/apps/blog/posts/license.html> ；
-
-   如果激活失败，检查是否是网络原因，或者试试离线激活，离线激活链接：<https://ibisheng.cn/apps/blog/posts/license.html#%E6%89%8B%E5%8A%A8%E7%A6%BB%E7%BA%BF%E6%BF%80%E6%B4%BB>
-
-   正确激活完成之后，需要重启所有的结点，在安装脚本的目录下运行 restart.sh脚本
-
-   ```shell
-   bash restart.sh
-   ```
-
-4. 安装docker过程出错
-
-   ![4407CA1C7C302F19E598F009FC8869FB](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/4407CA1C7C302F19E598F009FC8869FB.jpg)
-
-   这个错误可以参考链接[docker 安装报错 container-selinux >= 2.9 解决](https://blog.csdn.net/qq_41772936/article/details/81080284)
-
-   docker安装出错一般时由于系统层次的原因导致的。请参考相关资料修复。另外为了安装的顺利，建议centos系统使用使用7以上版本。其他linux系统也尽量使用较新版本。
-
-   一般来说，docker环境安装无误之后，毕升Office安装会比较顺利
-
-5. 如何重启所有的服务
-
-   在安装脚本（**步骤1中所下载下载脚**)本所在的目录，有一个脚本 restart.sh。执行该脚本即可重启毕升Office
-
-   ```shell
-   bash restart.sh
-   ```
-
-   
-
-6. 如何重写安装毕升Office
-
-   执行脚本 reinstall.sh，该脚本将重新安装所有的结点，**但是会保留数据和配置文件**
-
-   ```shell
-   bash reinstall.sh
-   ```
-
-   
-
-7. 如何升级毕升Office
-
-   执行脚本upgrade.sh，**该脚本会保留所有的数据和配置文件**
-
-   ```shell
-   bash upgrade.sh
-   ```
-
-8. 执行过程出现错误： Network bushing  declared as external…..  如下图
-
-   ![93D17738F207B6557723390F85D1CAA1](https://public-bisheng.oss-cn-zhangjiakou.aliyuncs.com/resource/93D17738F207B6557723390F85D1CAA1.png)
-
-   这是因为有些服务器上脚本运行 docker create network bisheng 会出错。修复这个问题的方法是手动执行一下这个命令
-
-   ```shell
-   docker network create bisheng
-   ```
-
-   接下来重新执行安装过程。
-
+安装使用过程中如果有疑问可参考[毕升Office使用指南](https://ibisheng.cn/apps/blog/posts/guide.html)

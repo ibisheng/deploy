@@ -21,6 +21,9 @@ docker-compose up -d
 cd -
 sleep 30
 
+cp -r resource/* $data/resource
+bash initTools.sh 2
+
 cd $data/workspace
 echo "reinstall apps"
 docker-compose up -d
@@ -34,7 +37,10 @@ docker-compose up -d
 
 cd -
 
+bash fontsService.sh
+
 bash restart.sh
 
+bash clearImages.sh
 echo "你开始使用毕升Office即表示你同意链接 https://ibisheng.cn/apps/blog/posts/agreement.html 中的内容"
 echo "在你的浏览器中打开 http://IP 即可访问毕升文档"
