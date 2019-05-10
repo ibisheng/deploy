@@ -7,7 +7,13 @@
 
 毕升Office云平台包括drive和在线文件服务功能。其中drive实现文件的在线管理，组织结构权限，分享，团队协作等，文件的全文检索等功能；在线文件服务能够处理word,ppt,excel格式文件的**带水印预览**以及**多人协同编辑**，另外还能处理pdf，视频，音频文件的预览以及实现了100多种文本文件带语法高亮的预览 。详细介绍请参考[**毕升Office产品手册**](https://bishengoffice.com)。下面毕升Office的详细部署说明，如果你喜欢我们欢迎加入毕升Office交流群。
 
-你可以通过毕升Office官方QQ [420819940](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=420819940&website=www.oicqzone.com) 以及 微信号 bishengoffice，或者电话 18613320502联系我们
+你可以通过如下方式联系我们：
+
+毕升Office官方QQ：  [420819940](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=420819940&website=www.oicqzone.com) ；
+
+毕升Office官方微信号：  bishengoffice；
+
+电话： 18613320502
 
 也可以在微信中搜索毕升Office文档小程序
 
