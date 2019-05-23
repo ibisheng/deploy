@@ -15,7 +15,7 @@ export tag=$tag
 
 cd $data/service
 
-docker-compose restart dgraphZero dgraphServer dgraphRatel mongod redis rabbit minio search
+docker-compose restart dgraphZero dgraphServer dgraphRatel mongod redis rabbit minio
 
 
 sleep 20
