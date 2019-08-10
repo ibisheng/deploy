@@ -7,7 +7,7 @@ fi
 if [ ! -x "$1" ] ;then
      mkdir "$1"
 fi
-
+basepath=$(cd `dirname $0`; pwd)
 echo "copy resource data"
 
 rm -rf $1/*
@@ -56,8 +56,9 @@ cd $1/workspace
 mkdir temp
 mkdir logs
 
-cd -
 
+
+cd $basepath
 
 
 bash upNodes.sh
