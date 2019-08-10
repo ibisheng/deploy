@@ -15,12 +15,6 @@ export tag=$tag
 
 bash pullImage.sh $tag
 
-cd $data/service
-echo "reinstall service"
-docker-compose up -d
-cd -
-sleep 30
-
 cp -r resource/* $data/resource
 bash initTools.sh 2
 
