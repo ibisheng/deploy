@@ -47,7 +47,7 @@ touch  nginx/temp/access.log
 #sed -e 's/HOST/'$2'/g' ../workspace/config/bisheng.conf >  nginx/config/conf.d/bisheng.conf
 
 
-chmod 777 elasticsearch/ -R
+#chmod 777 elasticsearch/ -R
 
 
 docker-compose up -d
