@@ -39,7 +39,7 @@ cd -
 
 bash fontsService.sh
 
-bash restart.sh
+bash upNodes.sh
 
 bash clearImages.sh
 echo "你开始使用毕升Office即表示你同意链接 https://bishengoffice.com/apps/blog/posts/agreement.html 中的内容"

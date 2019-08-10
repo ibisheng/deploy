@@ -116,21 +116,22 @@ services:
         aliases:
         - minio
 
-  search:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/search:free
-    container_name: search
-    volumes:
-      - ${basedir}/service/elasticsearch/data:/workspace/data:rw
-      - ${basedir}/service/elasticsearch/logs:/workspace/logs:rw
-#    ports:
-#      - 9200:9200
-#      - 9300:9300
-    user: elsearch
-    restart: on-failure:10
-    networks:
-      bisheng:
-        aliases:
-        - search
+#  search:
+#    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/search:free
+#    container_name: search
+#    volumes:
+#      - ${basedir}/service/elasticsearch/data:/workspace/data:rw
+#      - ${basedir}/service/elasticsearch/logs:/workspace/logs:rw
+##    ports:
+##      - 9200:9200
+##      - 9300:9300
+#    user: elsearch
+#    restart: on-failure:10
+#    networks:
+#      bisheng:
+#        aliases:
+#        - search
+
 networks:
   bisheng:
     external: true
