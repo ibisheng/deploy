@@ -33,13 +33,13 @@ cp -r nginx/* $1/nginx
 
 cd $1/service
 
-sysctl -w vm.max_map_count=262144
+#sysctl -w vm.max_map_count=262144
 mkdir -p dgraph
 mkdir -p mongod/db mongod/log
 touch  mongod/log/mongod.log
 mkdir -p rabbitmq/data
 mkdir -p minio/config minio/data
-mkdir -p elasticsearch/data elasticsearch/logs
+#mkdir -p elasticsearch/data elasticsearch/logs
 mkdir -p nginx/temp nginx/keys
 touch  nginx/temp/error.log
 touch  nginx/temp/access.log
@@ -89,6 +89,7 @@ cd $1/nginx
 docker-compose up -d
 
 cd -
+bash upNodes.sh
 bash clearImages.sh
 
 echo "你开始使用毕升Office即表示你同意链接 https://ibisheng.cn/apps/blog/posts/agreement.html 中的内容"
