@@ -12,20 +12,26 @@ tag=${arr[1]}
 export basedir=$data
 export tag=$tag
 
-
 cd $data/service
+echo "up service"
+docker-compose up -d
 
-docker-compose restart
 
-
-sleep 20
+cd -
 
 cd $data/workspace
-docker-compose restart
+echo "up apps"
+docker-compose up -d
 
-sleep 10
+
+cd -
 
 cd $data/nginx
+echo "up nginx"
+docker-compose up -d
 
-docker-compose restart
 
+
+cd -
+
+bash restart.sh

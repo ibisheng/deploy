@@ -7,11 +7,11 @@ fi
 if [ ! -x "$1" ] ;then
      mkdir "$1"
 fi
-
+basepath=$(cd `dirname $0`; pwd)
 echo "copy resource data"
 
 rm -rf $1/*
-docker rm nginx minio dgraphServer dgraphZero redis dgraphRatel rabbit search mongod  drive_full editor_app convert editor -f  1 > /dev/null 2>&1
+docker rm nginx minio dgraphServer dgraphZero redis dgraphRatel rabbit mongod  drive_full editor_app convert editor -f  1 > /dev/null 2>&1
 docker network create bisheng
 
 export basedir=$1
@@ -33,13 +33,13 @@ cp -r nginx/* $1/nginx
 
 cd $1/service
 
-sysctl -w vm.max_map_count=262144
+#sysctl -w vm.max_map_count=262144
 mkdir -p dgraph
 mkdir -p mongod/db mongod/log
 touch  mongod/log/mongod.log
 mkdir -p rabbitmq/data
 mkdir -p minio/config minio/data
-mkdir -p elasticsearch/data elasticsearch/logs
+#mkdir -p elasticsearch/data elasticsearch/logs
 mkdir -p nginx/temp nginx/keys
 touch  nginx/temp/error.log
 touch  nginx/temp/access.log
@@ -47,23 +47,8 @@ touch  nginx/temp/access.log
 #sed -e 's/HOST/'$2'/g' ../workspace/config/bisheng.conf >  nginx/config/conf.d/bisheng.conf
 
 
-chmod 777 elasticsearch/ -R
+#chmod 777 elasticsearch/ -R
 
-
-docker-compose up -d
-
-cd -
-
-
-
-#cp config.sample.yml config.yml
-
-#sed -e 's/HOST/'$2'/g' workspace/config/config.sample.yml > $1/workspace/config/config.yml
-
-sleep 60
-
-
-#bash init.sh 7 free $1
 
 
 
@@ -71,24 +56,17 @@ cd $1/workspace
 mkdir temp
 mkdir logs
 
-docker-compose up -d
-
-sleep 30
-
-cd -
 
 
+cd $basepath
+
+
+bash upNodes.sh
 bash init.sh 7 free $1
 sleep 20
 bash init.sh 8 free $1
-
 bash fontsService.sh
-
-
-cd $1/nginx
-docker-compose up -d
-
-cd -
+bash restart.sh
 bash clearImages.sh
 
 echo "你开始使用毕升Office即表示你同意链接 https://ibisheng.cn/apps/blog/posts/agreement.html 中的内容"
