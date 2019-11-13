@@ -20,9 +20,12 @@ dgrpah:
 mongodb:
   url: mongod  # mongodb的主机名或IP,根据自己的情况修改
   db: docs
+  #username: bisheng  #mongodb 用户名/密码
+  #password: 123456
 redis:
   url: redis:6379   # minio的主机名或IP,根据自己的情况修改,端口一般是默认值
   db: 0
+  #password: 123456  # redis 密码
 elasticsearch:
   url: search:9200
   enable: false
