@@ -19,6 +19,7 @@ data=${arr[0]}
 tag=${arr[1]}
 
 echo "copy nginx config"
+mv $data/service/nginx/config/conf.d/bisheng.conf $data/service/nginx/config/conf.d/bisheng.conf.bak
 cp service/nginx/config/conf.d/bisheng.conf  $data/service/nginx/config/conf.d -r
 
 mv .config
