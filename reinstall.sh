@@ -22,7 +22,7 @@ echo "copy nginx config"
 mv $data/service/nginx/config/conf.d/bisheng.conf $data/service/nginx/config/conf.d/bisheng.conf.bak
 cp service/nginx/config/conf.d/bisheng.conf  $data/service/nginx/config/conf.d -r
 
-mv .config
+rm .config
 echo "$data latest" > .config
 
 bash upgrade.sh
