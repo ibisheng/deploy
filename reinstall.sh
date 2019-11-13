@@ -21,7 +21,7 @@ tag=${arr[1]}
 echo "copy nginx config"
 cp service/nginx/config/conf.d/bisheng.conf  $data/service/nginx/config/conf.d -r
 
-mv .config -r
+mv .config
 echo "$data latest" > .config
 
 bash upgrade.sh
