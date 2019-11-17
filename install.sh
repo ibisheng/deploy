@@ -15,7 +15,7 @@ docker rm nginx minio dgraphServer dgraphZero redis dgraphRatel rabbit mongod  d
 docker network create bisheng
 
 export basedir=$1
-export tag=free
+export tag=latest
 bash pullImage.sh $tag
 
 echo "$1 latest" > .config
@@ -62,9 +62,9 @@ cd $basepath
 
 
 bash upNodes.sh
-bash init.sh 7 free $1
+bash init.sh 7 latest $1
 sleep 20
-bash init.sh 8 free $1
+bash init.sh 8 latest $1
 bash fontsService.sh
 bash restart.sh
 bash clearImages.sh
