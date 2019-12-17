@@ -65,6 +65,7 @@ bash upNodes.sh
 bash init.sh 7 latest $1
 sleep 20
 bash init.sh 8 latest $1
+sleep 30
 bash fontsService.sh
 bash restart.sh
 bash clearImages.sh

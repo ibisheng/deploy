@@ -15,13 +15,10 @@ export tag=$tag
 
 bash pullImage.sh $tag
 
-cp -r resource/* $data/resource
-bash initTools.sh 2
-
-
-bash fontsService.sh
-
 bash upNodes.sh
+
+sleep 30
+bash fontsService.sh
 
 bash clearImages.sh
 echo "你开始使用毕升Office即表示你同意链接 https://bishengoffice.com/apps/blog/posts/agreement.html 中的内容"
