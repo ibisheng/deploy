@@ -26,24 +26,5 @@ redis:
   url: redis:6379   # minio的主机名或IP,根据自己的情况修改,端口一般是默认值
   db: 0
   #password: 123456  # redis 密码
-elasticsearch:
-  url: search:9200
-  enable: false
 editorurl: /apps/editor
 apiurl: http://drive_full:3000/apps/api
-wechat:
-  openwebsiteapp: # 微信开放平台网站应用
-    appid: wxffffffffffffffff
-    appsecret: ffffff
-  openiosapp: # 微信开放平台ios应用
-    appid: wxffffffffffffffff
-    appsecret: ffffff
-  openandroidapp: # 微信开放平台android应用
-    appid: wxffffffffffffffff
-    appsecret: ffffff
-  mpofficialaccount:  # 微信公众平台公众号
-    appid: wxffffffffffffffff
-    appsecret: ffffff
-  mpapplet: # 微信公众平台小程序
-    appid: wxffffffffffffffff
-    appsecret: ffffff
