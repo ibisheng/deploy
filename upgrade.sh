@@ -17,6 +17,9 @@ bash pullImage.sh $tag
 
 bash upNodes.sh
 
+
+cp -r resource/icon/* $1/resource/icon
+
 #sleep 60
 #bash fontsService.sh
 
