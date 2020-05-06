@@ -19,7 +19,7 @@ bash upNodes.sh
 
 
 cp resource/icon/signPic* /bisheng_data/resource/icon/
-
+bash initTools.sh 2
 #sleep 60
 #bash fontsService.sh
 
