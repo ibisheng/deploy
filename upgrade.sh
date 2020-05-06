@@ -18,7 +18,7 @@ bash pullImage.sh $tag
 bash upNodes.sh
 
 
-cp -r resource/icon/* $1/resource/icon
+cp resource/icon/signPic* /bisheng_data/resource/icon/
 
 #sleep 60
 #bash fontsService.sh
