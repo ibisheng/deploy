@@ -9,17 +9,17 @@
 
 你可以通过如下方式联系我们：
 
-毕升Office官方QQ：  [420819940](tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=420819940&website=www.oicqzone.com) ；
+技术及合作：18613320502
 
-毕升Office官方微信号：  bishengoffice；
-
-电话： 18613320502
+销售以及商务咨询：13718023114
 
 也可以在微信中搜索毕升Office文档小程序
 
 ![扫码_搜索联合传播样式-微信标准绿版](https://bisheng-public.nodoc.cn/resource/扫码_搜索联合传播样式-微信标准绿版.png)
 
-## 
+
+
+
 
 ## 安装前必读
 
