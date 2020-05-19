@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   nginx:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/nginx:free
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/nginx:1.8
     container_name: nginx
     privileged: true
     volumes:
