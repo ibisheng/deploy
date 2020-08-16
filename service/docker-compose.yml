@@ -78,25 +78,6 @@ services:
         aliases:
         - redis
 
-
-  rabbit:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/rabbitmq:3.6
-    container_name: rabbit
-    privileged: true
-    volumes:
-       - ${basedir}/service/rabbitmq/data/:/var/lib/rabbitmq/mnesia:rw
-       - ${basedir}/service/rabbitmq/config:/etc/rabbitmq:rw
-#    ports:
-#      - 4369:4369
-#      - 5671-5672:5671-5672
-#      - 15672:15672
-#      - 25672:25672
-    restart: on-failure:10
-    networks:
-      bisheng:
-        aliases:
-        - rabbit
-
   minio:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:latest
     container_name: minio
@@ -116,21 +97,6 @@ services:
         aliases:
         - minio
 
-#  search:
-#    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/search:free
-#    container_name: search
-#    volumes:
-#      - ${basedir}/service/elasticsearch/data:/workspace/data:rw
-#      - ${basedir}/service/elasticsearch/logs:/workspace/logs:rw
-##    ports:
-##      - 9200:9200
-##      - 9300:9300
-#    user: elsearch
-#    restart: on-failure:10
-#    networks:
-#      bisheng:
-#        aliases:
-#        - search
 
 networks:
   bisheng:

@@ -37,7 +37,6 @@ cd $1/service
 mkdir -p dgraph
 mkdir -p mongod/db mongod/log
 touch  mongod/log/mongod.log
-mkdir -p rabbitmq/data
 mkdir -p minio/config minio/data
 #mkdir -p elasticsearch/data elasticsearch/logs
 mkdir -p nginx/temp nginx/keys

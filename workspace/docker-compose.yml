@@ -41,21 +41,6 @@ services:
       bisheng:
         aliases:
         - editor
-  convert:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/convert:${tag}
-    container_name: convert
-    privileged: true
-    volumes:
-    - ${basedir}/workspace:/workspace
-    restart: on-failure:10
-    environment:
-      ADDR: convert
-#    ports:
-#    - 5000:5000
-    networks:
-      bisheng:
-        aliases:
-        - convert
 networks:
   bisheng:
     external: true
