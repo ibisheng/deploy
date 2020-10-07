@@ -7,4 +7,6 @@ if [ $ProcNumber -le 0 ];then
    nohup ./licenseVerify &> /dev/null &
 else
    echo "licenseVerify is  running.."
+   bash stopLicenseVerify.sh
+   nohup ./licenseVerify &> /dev/null &
 fi
