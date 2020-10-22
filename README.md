@@ -143,7 +143,7 @@ docker ps -a
 
 ## 配置
 
-完成前面5步操作之后，需要申请免费激活系统即可进行正常使用。参考链接：[免费激活](https://bishengoffice.com/apps/blog/posts/license.html)
+完成前面5步操作之后，需要申请免费激活系统即可进行正常使用。参考链接：[免费激活](https://bishengoffice.com/apps/blog/posts/install-active.html)
 
 毕升Office安装默认是自带ngix配置的，其中nginx的配置文件在安装目录下。如果安装安装目录是 /bisheng_data 具体路径则是： /bisheng_data/service/nginx/config/conf.d/bisheng.conf 。
 
