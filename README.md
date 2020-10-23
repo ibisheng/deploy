@@ -9,9 +9,8 @@
 
 你可以通过如下方式联系我们：
 
-技术及合作：18613320502
 
-销售以及商务咨询：13718023114
+销售以及商务咨询：[联系我们](https://bishengoffice.com/apps/blog/posts/aboutus.html)
 
 也可以在微信中搜索毕升Office文档小程序
 
