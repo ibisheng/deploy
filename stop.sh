@@ -13,20 +13,20 @@ export basedir=$data
 export tag=$tag
 
 cd $data/service
-echo "up service"
+echo "stop service"
 docker-compose stop
 
 
 cd -
 
 cd $data/workspace
-echo "up apps"
+echo "stop apps"
 docker-compose stop
 
 
 cd -
 
 cd $data/nginx
-echo "up nginx"
+echo "stop nginx"
 docker-compose stop
 
