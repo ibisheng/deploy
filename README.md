@@ -12,11 +12,6 @@
 
 销售以及商务咨询：[联系我们](https://bishengoffice.com/apps/blog/posts/aboutus.html)
 
-也可以在微信中搜索毕升Office文档小程序
-
-![扫码_搜索联合传播样式-微信标准绿版](https://bisheng-public.nodoc.cn/resource/扫码_搜索联合传播样式-微信标准绿版.png)
-
-
 
 
 
