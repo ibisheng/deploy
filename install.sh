@@ -15,10 +15,10 @@ docker rm nginx minio dgraphServer dgraphZero redis dgraphRatel rabbit mongod  d
 docker network create bisheng
 
 export basedir=$1
-export tag=dev_base
+export tag=v3
 bash pullImage.sh $tag
 
-echo "$1 dev_base" > .config
+echo "$1 v3" > .config
 
 mkdir $1/service
 mkdir $1/workspace
@@ -61,9 +61,9 @@ cd $basepath
 
 
 bash upNodes.sh
-bash init.sh 7 dev_base $1
+bash init.sh 7 v3 $1
 sleep 20
-bash init.sh 8 dev_base $1
+bash init.sh 8 v3 $1
 sleep 30
 bash fontsService.sh
 bash restart.sh
