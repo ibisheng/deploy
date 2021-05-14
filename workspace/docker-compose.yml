@@ -52,6 +52,7 @@ services:
     - ${basedir}/workspace:/workspace
     restart: on-failure:10
     environment:
+      ADDR: convert
       NODEID: convert_worker
     networks:
       bisheng:
