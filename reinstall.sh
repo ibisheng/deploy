@@ -23,6 +23,6 @@ mv $data/service/nginx/config/conf.d/bisheng.conf $data/service/nginx/config/con
 cp service/nginx/config/conf.d/bisheng.conf  $data/service/nginx/config/conf.d -r
 
 rm .config
-echo "$data latest" > .config
+echo "$data v3" > .config
 
 bash upgrade.sh
