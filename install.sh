@@ -42,6 +42,8 @@ mkdir -p minio/config minio/data
 mkdir -p nginx/temp nginx/keys
 touch  nginx/temp/error.log
 touch  nginx/temp/access.log
+chmod  755 nginx/temp/ -R
+chmod  755 redis/config -R
 #mkdir  nginx/config/conf.d
 #sed -e 's/HOST/'$2'/g' ../workspace/config/bisheng.conf >  nginx/config/conf.d/bisheng.conf
 
