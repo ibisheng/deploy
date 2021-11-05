@@ -28,3 +28,4 @@ redis:
   #password: 123456  # redis 密码
 editorurl: /apps/editor
 apiurl: http://drive_full:3000/apps/api
+openlog: true #是否开启日志。默认开启全部日志，将此处修改为false，将仅仅打印错误日志
