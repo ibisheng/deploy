@@ -5,4 +5,4 @@
 {"_id":"37d16dd2","acls":{"file":831},"condition":"","name":"Restricted User","desp":"受限用户","ns":"uf","ct":"2018-10-08T04:09:51.828Z"}
 {"_id":"0e2e81c6","acls":{"account":15},"condition":"","name":"Manager","desp":"经理","ns":"ac","ct":"2018-10-08T04:10:57.991Z"}
 {"_id":"06cd6d86","acls":{"admin":64},"condition":"","name":"Operator","desp":"","ns":"ad","ct":"2018-10-08T04:11:37.459Z"}
-{"_id":"362c4c05","acls":{"admin":143,"trash":7},"condition":"","name":"系统管理员","desp":"","ns":"ad","ct":"2018-10-08T04:12:28.193Z"}
+{"_id":"362c4c05","acls":{"admin":143,"trash":7},"condition":"","name":"Admin","desp":"","ns":"ad","ct":"2018-10-08T04:12:28.193Z"}
