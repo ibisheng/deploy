@@ -1,8 +1,3 @@
-rabbitmq:
-  host: rabbit  # rabbitmq的主机名或IP
-  port: 5672   # rabbitmq的端口
-  user: guest   # rabbitmq的用户名，默认值为 guest,根据各自的情况进行更改
-  password: guest # rabbitmq的用户名，默认值为 guest,根据各自的情况进行更改
 minio:
   endpoint: minio:9000   # minio的主机名或IP,根据自己的情况修改
 #  publicendpoint: oss-cn-beijing.aliyuncs.com #针对实际部署时s3内外网的区别，
