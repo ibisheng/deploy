@@ -11,14 +11,14 @@ basepath=$(cd `dirname $0`; pwd)
 echo "copy resource data"
 
 rm -rf $1/*
-docker rm nginx minio dgraphServer dgraphZero redis dgraphRatel rabbit mongod  drive_full editor_app convert editor -f  1 > /dev/null 2>&1
+docker rm nginx minio dgraphServer dgraphZero redis dgraphRatel mysql  drive_full editor_app -f  1 > /dev/null 2>&1
 docker network create bisheng
 
 export basedir=$1
-export tag=v3
+export tag=v3.1
 bash pullImage.sh $tag
 
-echo "$1 v3" > .config
+echo "$1 v3.1" > .config
 
 mkdir $1/service
 mkdir $1/workspace

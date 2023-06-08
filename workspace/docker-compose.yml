@@ -28,36 +28,6 @@ services:
       bisheng:
         aliases:
         - editor_app
-  editor:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor:${tag}
-    container_name: editor
-    privileged: true
-    volumes:
-    - ${basedir}/workspace:/workspace
-    restart: on-failure:10
-    environment:
-      ADDR: editor
-      NODEID: editor_worker
-#    ports:
-#    - 18000:18000
-    networks:
-      bisheng:
-        aliases:
-        - editor
-  convert:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/convert:${tag}
-    container_name: convert
-    privileged: true
-    volumes:
-    - ${basedir}/workspace:/workspace
-    restart: on-failure:10
-    environment:
-      ADDR: convert
-      NODEID: convert_worker
-    networks:
-      bisheng:
-        aliases:
-        - convert
 networks:
   bisheng:
     external: true
