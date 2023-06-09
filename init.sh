@@ -13,13 +13,14 @@ if [ ! -n "$3" ] ;then
     exit
 fi
 docker rm tools -f 1 > /dev/null 2>&1
-
+basepath=$(cd `dirname $0`; pwd)
 
 docker run --name tools --privileged  \
     -v $3/workspace:/workspace \
     -e RUN_ENV=docker \
     -e type=$1  \
     -e args=$4  \
+    -e resource= $basepath/resource \
     --net=bisheng  \
     --entrypoint  /bisheng/bin/tools \
     registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor_app:$2
