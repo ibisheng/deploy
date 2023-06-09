@@ -20,7 +20,7 @@ dgrpah:
 dbtype: mysql
 mysql:
   hosts: # mysql的主机名或IP,根据自己的情况修改
-    - localhost:3306
+    - mysql:3306
   username: bisheng
   password: "123456"
   db: docs
