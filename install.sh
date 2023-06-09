@@ -61,7 +61,7 @@ cd $basepath
 
 bash upNodes.sh
 bash init.sh 3 v3.1 $1
-bash initAdminPass bisheng
+bash initAdminPass.sh bisheng
 sleep 20
 bash fontsService.sh
 bash restart.sh
