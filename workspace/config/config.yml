@@ -17,12 +17,13 @@ minio:
 statichost:  /s3 # minio的资源访问地址，根据自己情况修改
 dgrpah:
   addr: dgraphServer:9080  # dgraph的主机名或IP,根据自己的情况修改,端口一般是默认值
-mongodb:
-  url: mongod  # mongodb的主机名或IP,根据自己的情况修改
-  db: docs
-  #username: bisheng  #mongodb 用户名/密码
-  #password: 123456
 dbtype: mysql
+mysql:
+  hosts: # mysql的主机名或IP,根据自己的情况修改
+    - localhost:3306
+  username: bisheng
+  password: "123456"
+  db: docs
 redis:
   url: redis:6379   # minio的主机名或IP,根据自己的情况修改,端口一般是默认值
   db: 0
