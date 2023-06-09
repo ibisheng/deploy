@@ -35,10 +35,7 @@ cd $1/service
 
 #sysctl -w vm.max_map_count=262144
 mkdir -p dgraph
-mkdir -p mongod/db mongod/log
-touch  mongod/log/mongod.log
 mkdir -p minio/config minio/data
-#mkdir -p elasticsearch/data elasticsearch/logs
 mkdir -p nginx/temp nginx/keys
 touch  nginx/temp/error.log
 touch  nginx/temp/access.log
@@ -63,7 +60,7 @@ cd $basepath
 
 
 bash upNodes.sh
-bash init.sh 7 v3 $1
+bash init.sh 3 v3 $1
 sleep 20
 bash init.sh 8 v3 $1
 sleep 30

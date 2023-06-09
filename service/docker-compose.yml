@@ -80,23 +80,23 @@ services:
         - redis
 
   minio:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:latest
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
+    # change to ${imageurl}/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
     container_name: minio
-    privileged: true
     volumes:
       - ${basedir}/service/minio/data:/data:rw
-      - ${basedir}/service/minio/config:/root/.minio:rw
     environment:
-      MINIO_ACCESS_KEY: 9QPAQ65R1SO1NDHNYESN
-      MINIO_SECRET_KEY: X9MquX/OTU35GLApKJ8tEMqBcTcXc4WSKigkroUI
-#    ports:
-#      - 9000:9000
-    restart: on-failure
-    command: server /data
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password
+      # ports:
+      # - 9000:9000
+      # - 9001:9001
+    restart: always
+    command: server --console-address :9001 /data
     networks:
       bisheng:
         aliases:
-        - minio
+          - minio
 
 
 networks:
