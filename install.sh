@@ -62,8 +62,6 @@ cd $basepath
 bash upNodes.sh
 bash init.sh 3 v3 $1
 sleep 20
-bash init.sh 8 v3 $1
-sleep 30
 bash fontsService.sh
 bash restart.sh
 bash clearImages.sh
