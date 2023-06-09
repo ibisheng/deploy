@@ -14,7 +14,6 @@ if [ ! -n "$3" ] ;then
 fi
 docker rm tools -f 1 > /dev/null 2>&1
 
-docker pull registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor_app:$2
 
 docker run --name tools --privileged  \
     -v $3:/workspace \
