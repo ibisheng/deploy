@@ -1,5 +1,52 @@
 version: "3.2"
 services:
+  nginx:
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/nginx:1.20.1
+    container_name: nginx
+    privileged: true
+    volumes:
+      - ${basedir}/service/nginx/config:/config:rw
+      - ${basedir}/service/nginx/temp:/temp:rw
+      - ${basedir}/service/nginx/keys:/keys:rw
+    ports:
+      - 80:80
+      - 443:443
+    restart: on-failure
+    networks:
+      bisheng:
+        aliases:
+          - nginx
+  minio:
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
+    container_name: minio
+    volumes:
+      - ${basedir}/service/minio/data:/data:rw
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password
+      # ports:
+      # - 9000:9000
+      # - 9001:9001
+    restart: always
+    command: server --console-address :9001 /data
+    networks:
+      bisheng:
+        aliases:
+          - minio
+  redis:
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/rejson:2.0.9
+    container_name: redis
+    volumes:
+      - ${basedir}/service/redis/db:/data:rw
+      - ${basedir}/service/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:rw
+      # ports:
+      # - 6379:6379
+    restart: always
+    command: /usr/local/etc/redis/redis.conf
+    networks:
+      bisheng:
+        aliases:
+          - redis
   mysql:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/mysql:8-oracle
     container_name: mysql
@@ -17,44 +64,6 @@ services:
       bisheng:
         aliases:
           - mysql
-
-
-  redis:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/redis:6.2.8
-    container_name: redis
-    privileged: true
-    volumes:
-       - ${basedir}/service/redis/db:/data:rw
-       - ${basedir}/service/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:rw
-#    ports:
-#      - 6379:6379
-    restart: on-failure:10
-    command: /usr/local/etc/redis/redis.conf
-    networks:
-      bisheng:
-        aliases:
-        - redis
-
-  minio:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
-    # change to ${imageurl}/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
-    container_name: minio
-    volumes:
-      - ${basedir}/service/minio/data:/data:rw
-    environment:
-      MINIO_ROOT_USER: admin
-      MINIO_ROOT_PASSWORD: password
-      # ports:
-      # - 9000:9000
-      # - 9001:9001
-    restart: always
-    command: server --console-address :9001 /data
-    networks:
-      bisheng:
-        aliases:
-          - minio
-
-
 networks:
   bisheng:
     external: true
