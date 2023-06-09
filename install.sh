@@ -60,7 +60,7 @@ cd $basepath
 
 
 bash upNodes.sh
-bash init.sh 3 v3 $1
+bash init.sh 3 v3.1 $1
 sleep 20
 bash fontsService.sh
 bash restart.sh
