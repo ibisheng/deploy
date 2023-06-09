@@ -20,7 +20,6 @@ docker run --name tools --privileged  \
     -e RUN_ENV=docker \
     -e type=$1  \
     -e args=$4  \
-    -e resource=$basepath/resource \
     --net=bisheng  \
     --entrypoint  /bisheng/bin/tools \
     registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor_app:$2
