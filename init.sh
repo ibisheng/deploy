@@ -16,7 +16,7 @@ docker rm tools -f 1 > /dev/null 2>&1
 
 
 docker run --name tools --privileged  \
-    -v $3:/workspace \
+    -v $3/workspace:/workspace \
     -e RUN_ENV=docker \
     -e type=$1  \
     -e args=$4  \
