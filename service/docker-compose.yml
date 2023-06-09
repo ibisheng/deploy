@@ -1,21 +1,5 @@
 version: "3.2"
 services:
-  nginx:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/nginx:1.20.1
-    container_name: nginx
-    privileged: true
-    volumes:
-      - ${basedir}/service/nginx/config:/config:rw
-      - ${basedir}/service/nginx/temp:/temp:rw
-      - ${basedir}/service/nginx/keys:/keys:rw
-    ports:
-      - 80:80
-      - 443:443
-    restart: on-failure
-    networks:
-      bisheng:
-        aliases:
-          - nginx
   minio:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
     container_name: minio
