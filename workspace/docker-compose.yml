@@ -1,18 +1,5 @@
 version: "3.2"
 services:
-  drive_full:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/drive_full:${tag}
-    container_name: drive_full
-    privileged: true
-    volumes:
-    - ${basedir}/workspace:/workspace
-    restart: on-failure:10
-#    ports:
-#    - 3000:3000
-    networks:
-      bisheng:
-        aliases:
-        - drive
   editor_app:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor_app:${tag}
     container_name: editor_app

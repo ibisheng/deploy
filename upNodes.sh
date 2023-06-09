@@ -18,6 +18,8 @@ docker-compose up -d
 
 
 cd -
+bash checkMysql.sh
+
 
 cd $data/workspace
 echo "up apps"

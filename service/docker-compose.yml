@@ -1,49 +1,36 @@
 version: "3.2"
 services:
-  dgraphZero:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
-    container_name: dgraphZero
-    privileged: true
+  minio:
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:RELEASE.2021-10-10T16-53-30Z.fips
+    container_name: minio
     volumes:
-      - ${basedir}/service/dgraph:/dgraph:rw
+      - ${basedir}/service/minio/data:/data:rw
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password
 #    ports:
-#      - 5080:5080
-#      - 6080:6080
-    restart: on-failure
-    command: dgraph zero --my=dgraphZero:5080
+#      - 9000:9000
+#      - 9001:9001
+    restart: always
+    command: server --console-address :9001 /data
     networks:
       bisheng:
         aliases:
-        - dgraphZero
-  dgraphServer:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
-    container_name: dgraphServer
-    privileged: true
+          - minio
+  redis:
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/rejson:2.0.9
+    container_name: redis
     volumes:
-      - ${basedir}/service/dgraph:/dgraph:rw
-#    ports:
-#      - 8080:8080
-#      - 9080:9080
-    restart: on-failure
-    command: dgraph server --whitelist  172.17.0.0:172.20.0.0 --my=dgraphServer:7080 --lru_mb=2048 --zero=dgraphZero:5080
+      - ${basedir}/service/redis/db:/data:rw
+      - ${basedir}/service/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:rw
+      # ports:
+      # - 6379:6379
+    restart: always
+    command: /usr/local/etc/redis/redis.conf
     networks:
       bisheng:
         aliases:
-        - dgraphServer
-  dgraphRatel:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
-    container_name: dgraphRatel
-    privileged: true
-    volumes:
-       - ${basedir}/service/dgraph:/dgraph:rw
-#    ports:
-#      - 8000:8000
-    restart: on-failure
-    command: dgraph-ratel
-    networks:
-      bisheng:
-        aliases:
-        - dgraphRatel
+          - redis
   mysql:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/mysql:8-oracle
     container_name: mysql
@@ -61,44 +48,6 @@ services:
       bisheng:
         aliases:
           - mysql
-
-
-  redis:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/redis:4.0
-    container_name: redis
-    privileged: true
-    volumes:
-       - ${basedir}/service/redis/db:/data:rw
-       - ${basedir}/service/redis/config/redis.conf:/usr/local/etc/redis/redis.conf:rw
-#    ports:
-#      - 6379:6379
-    restart: on-failure:10
-    command: /usr/local/etc/redis/redis.conf
-    networks:
-      bisheng:
-        aliases:
-        - redis
-
-  minio:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/minio:latest
-    container_name: minio
-    privileged: true
-    volumes:
-      - ${basedir}/service/minio/data:/data:rw
-      - ${basedir}/service/minio/config:/root/.minio:rw
-    environment:
-      MINIO_ACCESS_KEY: 9QPAQ65R1SO1NDHNYESN
-      MINIO_SECRET_KEY: X9MquX/OTU35GLApKJ8tEMqBcTcXc4WSKigkroUI
-#    ports:
-#      - 9000:9000
-    restart: on-failure
-    command: server /data
-    networks:
-      bisheng:
-        aliases:
-        - minio
-
-
 networks:
   bisheng:
     external: true
