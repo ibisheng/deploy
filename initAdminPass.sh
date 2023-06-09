@@ -24,4 +24,5 @@ docker run --name tools --privileged  \
     -e type=32  \
     -e pass=$1  \
     --net=bisheng  \
+    --entrypoint  /bisheng/bin/tools \
     registry.cn-zhangjiakou.aliyuncs.com/bisheng/editor_app:$tag
