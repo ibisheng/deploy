@@ -44,22 +44,23 @@ services:
       bisheng:
         aliases:
         - dgraphRatel
-  mongod:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/mongo:3.6
-    container_name: mongod
-    privileged: true
+  mysql:
+    image: ${imageurl}/mysql:8-oracle
+    container_name: mysql
+    restart: always
     volumes:
-       - ${basedir}/service/mongod/db/:/data/db:rw
-       - ${basedir}/service/mongod/config/:/data/configdb:rw
-       - ${basedir}/service/mongod/log/:/data/log:rw
-#    ports:
-#      - 27017:27017
-    restart: on-failure
-    command: --config /data/configdb/mongod.conf
+      - ${basedir}/service/mysql/data:/var/lib/mysql
+      - ${basedir}/service/mysql/logs:/var/log/mysql
+      # ports:
+      # - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      TZ: Asia/Shanghai
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --default-authentication-plugin=mysql_native_password
     networks:
       bisheng:
         aliases:
-        - mongod
+          - mysql
 
 
   redis:
