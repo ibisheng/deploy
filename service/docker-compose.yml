@@ -45,7 +45,7 @@ services:
         aliases:
         - dgraphRatel
   mysql:
-    image: ${imageurl}/mysql:8-oracle
+    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/mysql:8-oracle
     container_name: mysql
     restart: always
     volumes:
