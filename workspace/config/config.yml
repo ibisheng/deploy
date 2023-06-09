@@ -6,8 +6,8 @@ rabbitmq:
 minio:
   endpoint: minio:9000   # minio的主机名或IP,根据自己的情况修改
 #  publicendpoint: oss-cn-beijing.aliyuncs.com #针对实际部署时s3内外网的区别，
-  ak: 9QPAQ65R1SO1NDHNYESN  # minio 的ak ,根据自己的情况修改
-  sk: X9MquX/OTU35GLApKJ8tEMqBcTcXc4WSKigkroUI  # minio的sk,根据自己的情况修改
+  ak: admin  # minio 的ak ,根据自己的情况修改
+  sk: password  # minio的sk,根据自己的情况修改
   secure: false
   uploadbucket: upload
   draftbucket: draft
@@ -22,6 +22,7 @@ mongodb:
   db: docs
   #username: bisheng  #mongodb 用户名/密码
   #password: 123456
+dbtype: mysql
 redis:
   url: redis:6379   # minio的主机名或IP,根据自己的情况修改,端口一般是默认值
   db: 0
