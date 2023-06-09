@@ -11,7 +11,7 @@ basepath=$(cd `dirname $0`; pwd)
 echo "copy resource data"
 
 rm -rf $1/*
-docker rm nginx minio dgraphServer dgraphZero redis dgraphRatel mysql  drive_full editor_app -f  1 > /dev/null 2>&1
+docker rm nginx minio  redis mysql  editor_app -f  1 > /dev/null 2>&1
 docker network create bisheng
 
 export basedir=$1

@@ -1,49 +1,5 @@
 version: "3.2"
 services:
-  dgraphZero:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
-    container_name: dgraphZero
-    privileged: true
-    volumes:
-      - ${basedir}/service/dgraph:/dgraph:rw
-#    ports:
-#      - 5080:5080
-#      - 6080:6080
-    restart: on-failure
-    command: dgraph zero --my=dgraphZero:5080
-    networks:
-      bisheng:
-        aliases:
-        - dgraphZero
-  dgraphServer:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
-    container_name: dgraphServer
-    privileged: true
-    volumes:
-      - ${basedir}/service/dgraph:/dgraph:rw
-#    ports:
-#      - 8080:8080
-#      - 9080:9080
-    restart: on-failure
-    command: dgraph server --whitelist  172.17.0.0:172.20.0.0 --my=dgraphServer:7080 --lru_mb=2048 --zero=dgraphZero:5080
-    networks:
-      bisheng:
-        aliases:
-        - dgraphServer
-  dgraphRatel:
-    image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/dgraph:v1.0.5
-    container_name: dgraphRatel
-    privileged: true
-    volumes:
-       - ${basedir}/service/dgraph:/dgraph:rw
-#    ports:
-#      - 8000:8000
-    restart: on-failure
-    command: dgraph-ratel
-    networks:
-      bisheng:
-        aliases:
-        - dgraphRatel
   mysql:
     image: registry.cn-zhangjiakou.aliyuncs.com/bisheng/mysql:8-oracle
     container_name: mysql
